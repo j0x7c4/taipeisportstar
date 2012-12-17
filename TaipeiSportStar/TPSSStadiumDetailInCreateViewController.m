@@ -44,8 +44,8 @@
     [super viewDidLoad];
   
   self.title = self.labelStadiumName.text = stadium[TPSSDataSourceDictKeyStadiumName];
-  self.labelBusInfo.text = stadium[TPSSDataSourceDictKeyStadiumBus];
-  self.labelMRTInfo.text = stadium[TPSSDataSourceDictKeyStadiumMrt];
+  self.labelBusInfo.text = [[NSString alloc]initWithFormat:@"公車路線:%@",stadium[TPSSDataSourceDictKeyStadiumBus]];
+  self.labelMRTInfo.text = [[NSString alloc]initWithFormat:@"捷運路線:%@",stadium[TPSSDataSourceDictKeyStadiumMrt]];
   self.labelOpenTime.text = stadium[TPSSDataSourceDictKeyStadiumTime];
 }
 
