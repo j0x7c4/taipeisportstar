@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iaY-UW-OQo">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - 台北運動星-->
+        <scene sceneID="JWf-Gk-mKD">
+            <objects>
+                <viewController id="t3M-CV-6K1" customClass="SLViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zdF-3g-D16">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aV-JW-YBq">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClickHandler:" destination="t3M-CV-6K1" eventType="touchUpInside" id="Uo1-5h-1tK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9aV-JW-YBq" firstAttribute="centerX" secondItem="zdF-3g-D16" secondAttribute="centerX" type="default" id="HWw-51-TWH"/>
+                            <constraint firstItem="9aV-JW-YBq" firstAttribute="top" secondItem="zdF-3g-D16" secondAttribute="top" constant="239" id="j8B-02-2Vz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="台北運動星" id="b4k-nm-P86"/>
+                    <connections>
+                        <outlet property="buttonLoginLogout" destination="9aV-JW-YBq" id="FTU-c5-9xo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dyr-hT-Pbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1780" y="-1042"/>
+        </scene>
+        <!--Home View Controller - 我可以做什麼？-->
+        <scene sceneID="5">
+            <objects>
+                <viewController storyboardIdentifier="homeViewController" id="2" customClass="TPSSHomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsa-Cb-zCy" customClass="FBProfilePictureView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-WQ-YjC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="ZuT-My-ChF"/>
+                                    <constraint firstAttribute="height" constant="40" id="zNV-0Z-wzV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x9-mA-NlA">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="加入活動">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xYL-j5-bcv" kind="push" id="15g-5K-O3M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUs-cs-aWs">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="創建活動">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="crN-qs-Iz8" kind="push" id="SQw-HJ-ZhZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jsa-Cb-zCy" secondAttribute="trailing" constant="181" id="1UQ-7U-zG1"/>
+                            <constraint firstAttribute="trailing" secondItem="uUs-cs-aWs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2pd-Y6-dqE"/>
+                            <constraint firstItem="8x9-mA-NlA" firstAttribute="leading" secondItem="Jsa-Cb-zCy" secondAttribute="leading" type="default" id="Dtd-NO-8yI"/>
+                            <constraint firstAttribute="trailing" secondItem="9bM-WQ-YjC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="GBH-K7-CA6"/>
+                            <constraint firstItem="Jsa-Cb-zCy" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HJ2-zV-ZA4"/>
+                            <constraint firstItem="uUs-cs-aWs" firstAttribute="baseline" secondItem="8x9-mA-NlA" secondAttribute="baseline" type="default" id="I2P-Ok-2Q6"/>
+                            <constraint firstItem="Jsa-Cb-zCy" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="28" id="PJH-AC-ehp"/>
+                            <constraint firstItem="9bM-WQ-YjC" firstAttribute="top" secondItem="3" secondAttribute="top" constant="52" id="blg-Hr-Dga"/>
+                            <constraint firstAttribute="bottom" secondItem="Jsa-Cb-zCy" secondAttribute="bottom" constant="381" id="i6n-5V-LgN"/>
+                            <constraint firstAttribute="bottom" secondItem="uUs-cs-aWs" secondAttribute="bottom" constant="200" id="yVb-SD-GmJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="我可以做什麼？" id="onF-G8-0jy"/>
+                    <connections>
+                        <outlet property="userNameLabel" destination="9bM-WQ-YjC" id="ZYq-2p-48J"/>
+                        <outlet property="userProfileImage" destination="Jsa-Cb-zCy" id="y5Q-gz-zNx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973" y="-185"/>
+        </scene>
+        <!--Stadium Detail In Join View Controller-->
+        <scene sceneID="vKt-Yz-1hG">
+            <objects>
+                <viewController storyboardIdentifier="stadiumDetailInJoin" id="mM0-TQ-pZa" customClass="TPSSStadiumDetailInJoinViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6v6-Cb-zXC">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stadium name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-Wo-WYi">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="8H7-d9-AVU"/>
+                                    <constraint firstAttribute="width" constant="285" id="HcB-3S-cOG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Open time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTh-Hq-BNF">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5A-LY-CQH">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-b3-8Ia">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MRT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bga-XC-zDX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="jpJ-QX-FM9"/>
+                                    <constraint firstAttribute="width" constant="38" id="vot-Qo-hBc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aG8-Lc-tWq">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="確定加入">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="joinButtonClicked:" destination="mM0-TQ-pZa" eventType="touchUpInside" id="VUy-6l-bL5"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="24z-Oy-Xvg">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="342" id="FrF-S0-XsX"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="mM0-TQ-pZa" id="7FA-LE-erY"/>
+                                    <outlet property="delegate" destination="mM0-TQ-pZa" id="DrF-IR-ZeZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tb3-b3-8Ia" firstAttribute="leading" secondItem="6v6-Cb-zXC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3i1-bb-Xrd"/>
+                            <constraint firstItem="Bga-XC-zDX" firstAttribute="leading" secondItem="6v6-Cb-zXC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9nH-Uq-IQn"/>
+                            <constraint firstItem="Tb3-b3-8Ia" firstAttribute="top" secondItem="A5A-LY-CQH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FHT-fN-lGJ"/>
+                            <constraint firstItem="jTh-Hq-BNF" firstAttribute="leading" secondItem="6v6-Cb-zXC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="HZR-lR-KDN"/>
+                            <constraint firstItem="GdP-Wo-WYi" firstAttribute="leading" secondItem="6v6-Cb-zXC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Swb-8H-bmc"/>
+                            <constraint firstItem="24z-Oy-Xvg" firstAttribute="top" secondItem="6v6-Cb-zXC" secondAttribute="top" constant="118" id="Uyq-ni-Xlm"/>
+                            <constraint firstItem="24z-Oy-Xvg" firstAttribute="trailing" secondItem="6v6-Cb-zXC" secondAttribute="trailing" type="default" id="bRz-Wq-9Po"/>
+                            <constraint firstItem="A5A-LY-CQH" firstAttribute="leading" secondItem="6v6-Cb-zXC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cc1-Ql-Ag8"/>
+                            <constraint firstItem="A5A-LY-CQH" firstAttribute="top" secondItem="jTh-Hq-BNF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="get-ih-0Gd"/>
+                            <constraint firstItem="jTh-Hq-BNF" firstAttribute="top" secondItem="GdP-Wo-WYi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kEM-C3-bWH"/>
+                            <constraint firstItem="24z-Oy-Xvg" firstAttribute="leading" secondItem="6v6-Cb-zXC" secondAttribute="leading" type="default" id="we0-rZ-66h"/>
+                            <constraint firstItem="GdP-Wo-WYi" firstAttribute="top" secondItem="6v6-Cb-zXC" secondAttribute="top" constant="20" symbolic="YES" type="default" id="x6a-Vv-Cwy"/>
+                            <constraint firstItem="aG8-Lc-tWq" firstAttribute="top" secondItem="6v6-Cb-zXC" secondAttribute="top" constant="77" id="yZW-bW-HoE"/>
+                            <constraint firstItem="aG8-Lc-tWq" firstAttribute="leading" secondItem="6v6-Cb-zXC" secondAttribute="leading" constant="154" id="zHO-4q-vgZ"/>
+                            <constraint firstItem="Bga-XC-zDX" firstAttribute="top" secondItem="Tb3-b3-8Ia" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zcT-PG-rXI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonJoin" destination="aG8-Lc-tWq" id="I6v-MW-Kug"/>
+                        <outlet property="labelBusInfo" destination="Tb3-b3-8Ia" id="wr8-lm-Htg"/>
+                        <outlet property="labelMRTInfo" destination="Bga-XC-zDX" id="3JJ-bf-mnl"/>
+                        <outlet property="labelOpenTime" destination="jTh-Hq-BNF" id="i7y-36-GIt"/>
+                        <outlet property="labelSport" destination="A5A-LY-CQH" id="mQH-v2-Y5v"/>
+                        <outlet property="labelStadiumName" destination="GdP-Wo-WYi" id="eJD-6R-Zo9"/>
+                        <outlet property="tableViewSportList" destination="24z-Oy-Xvg" id="nxq-Fp-8mp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S07-45-I5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2893" y="-760"/>
+        </scene>
+        <!--Sport List In Create View Controller - 運動-->
+        <scene sceneID="bYT-Md-Dof">
+            <objects>
+                <tableViewController id="CUl-NJ-Ns0" customClass="TPSSSportListInCreateViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cNm-f4-peF">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sUp-4U-Iqk">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CUl-NJ-Ns0" id="ROn-lb-4Ta"/>
+                            <outlet property="delegate" destination="CUl-NJ-Ns0" id="O7B-G2-EkC"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="運動" id="OBc-aT-vrx"/>
+                    <navigationItem key="navigationItem" id="z2V-qg-PKW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r28-ub-uRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921" y="1235"/>
+        </scene>
+        <!--Stadium Detail In Create View Controller-->
+        <scene sceneID="u5g-i7-MJV">
+            <objects>
+                <viewController storyboardIdentifier="stadiumDetailInCreate" id="J5m-fh-GIQ" customClass="TPSSStadiumDetailInCreateViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lBK-xE-S1f">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stadium name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1r-hj-sWM">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="uEg-Fo-YVV"/>
+                                    <constraint firstAttribute="width" constant="285" id="yma-LK-3Ud"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Open time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKS-CA-7CO">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg4-jf-5kD">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDK-BE-kwj">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MRT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdS-Rs-ID0">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mu-Dg-vpY">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="創建活動">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createEvent:" destination="J5m-fh-GIQ" eventType="touchUpInside" id="4n7-Pf-Uhy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CKS-CA-7CO" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Y0-UC-wG7"/>
+                            <constraint firstItem="FdS-Rs-ID0" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DyQ-Rn-d9S"/>
+                            <constraint firstAttribute="bottom" secondItem="5mu-Dg-vpY" secondAttribute="bottom" constant="228" id="HPb-ae-GIQ"/>
+                            <constraint firstItem="T1r-hj-sWM" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Saw-aG-Dsf"/>
+                            <constraint firstItem="CKS-CA-7CO" firstAttribute="top" secondItem="T1r-hj-sWM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VIL-6J-avm"/>
+                            <constraint firstItem="hg4-jf-5kD" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="W93-w2-djC"/>
+                            <constraint firstItem="hDK-BE-kwj" firstAttribute="top" secondItem="hg4-jf-5kD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Woz-Nj-lAT"/>
+                            <constraint firstItem="T1r-hj-sWM" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cMD-jk-hm4"/>
+                            <constraint firstItem="hDK-BE-kwj" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cig-9T-4ix"/>
+                            <constraint firstItem="hg4-jf-5kD" firstAttribute="top" secondItem="CKS-CA-7CO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lxa-ak-G7U"/>
+                            <constraint firstItem="5mu-Dg-vpY" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="s2Z-TN-8nL"/>
+                            <constraint firstItem="FdS-Rs-ID0" firstAttribute="top" secondItem="hDK-BE-kwj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wWd-gS-84Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonCreateEvent" destination="5mu-Dg-vpY" id="gtV-xy-ocG"/>
+                        <outlet property="labelBusInfo" destination="hDK-BE-kwj" id="2hb-kU-xCV"/>
+                        <outlet property="labelMRTInfo" destination="FdS-Rs-ID0" id="nnN-5u-Lo0"/>
+                        <outlet property="labelOpenTime" destination="CKS-CA-7CO" id="4CQ-c3-U59"/>
+                        <outlet property="labelSports" destination="hg4-jf-5kD" id="iWo-AU-WlH"/>
+                        <outlet property="labelStadiumName" destination="T1r-hj-sWM" id="5KG-Qa-04n"/>
+                        <outlet property="view" destination="lBK-xE-S1f" id="Aqa-qW-nyt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tik-5M-zTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2807" y="1108"/>
+        </scene>
+        <!--Join Selection Map View Controller - 附近-->
+        <scene sceneID="AuY-yz-au0">
+            <objects>
+                <viewController storyboardIdentifier="joinSelectionMapViewController" id="9gw-Iz-k8X" customClass="TPSSJoinSelectionMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K9Z-4F-qbv">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lN8-BO-leh">
+                                <connections>
+                                    <outlet property="delegate" destination="9gw-Iz-k8X" id="JWc-Yc-YTk"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lN8-BO-leh" firstAttribute="top" secondItem="K9Z-4F-qbv" secondAttribute="top" type="default" id="NO0-Pt-qdn"/>
+                            <constraint firstItem="lN8-BO-leh" firstAttribute="leading" secondItem="K9Z-4F-qbv" secondAttribute="leading" type="default" id="Onr-LI-xvk"/>
+                            <constraint firstItem="lN8-BO-leh" firstAttribute="bottom" secondItem="K9Z-4F-qbv" secondAttribute="bottom" type="default" id="Sfy-Cw-OCq"/>
+                            <constraint firstItem="lN8-BO-leh" firstAttribute="trailing" secondItem="K9Z-4F-qbv" secondAttribute="trailing" type="default" id="sHs-hg-0MO"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="附近" id="MJQ-8o-X4F"/>
+                    <connections>
+                        <outlet property="mapView" destination="lN8-BO-leh" id="BYS-7K-3Uh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dke-xc-iEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2369" y="-874"/>
+        </scene>
+        <!--Tab Bar Controller - 加入活動-->
+        <scene sceneID="NBR-Lp-I4q">
+            <objects>
+                <tabBarController storyboardIdentifier="joinTabBarController" definesPresentationContext="YES" id="xYL-j5-bcv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="加入活動" id="tVO-X2-H3Z"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="m0m-vt-DOZ">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9gw-Iz-k8X" kind="relationship" relationship="viewControllers" id="eSO-hr-hGB"/>
+                        <segue destination="A4q-eo-s25" kind="relationship" relationship="viewControllers" id="kvR-Wn-5tg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18r-oP-scK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856" y="-322"/>
+        </scene>
+        <!--Sport List In Join View Controller - 運動-->
+        <scene sceneID="ief-1s-lUg">
+            <objects>
+                <tableViewController id="A4q-eo-s25" customClass="TPSSSportListInJoinViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a2f-wx-ga8">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Exi-RQ-AfA">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="A4q-eo-s25" id="iFh-nw-zLY"/>
+                            <outlet property="delegate" destination="A4q-eo-s25" id="dUL-I1-fGq"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="運動" id="kra-9d-fkw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6X-fK-u27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2383" y="-159"/>
+        </scene>
+        <!--Create Selection Map View Controller - 附近-->
+        <scene sceneID="GNa-ue-5oj">
+            <objects>
+                <viewController id="gy6-2R-ZNY" customClass="TPSSCreateSelectionMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aMf-Al-ZYh">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGz-bD-gFa">
+                                <connections>
+                                    <outlet property="delegate" destination="gy6-2R-ZNY" id="5Mb-AA-c76"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eGz-bD-gFa" firstAttribute="top" secondItem="aMf-Al-ZYh" secondAttribute="top" type="default" id="N49-Q2-PtE"/>
+                            <constraint firstItem="eGz-bD-gFa" firstAttribute="leading" secondItem="aMf-Al-ZYh" secondAttribute="leading" type="default" id="hgO-7n-khF"/>
+                            <constraint firstItem="eGz-bD-gFa" firstAttribute="bottom" secondItem="aMf-Al-ZYh" secondAttribute="bottom" type="default" id="olr-57-hry"/>
+                            <constraint firstItem="eGz-bD-gFa" firstAttribute="trailing" secondItem="aMf-Al-ZYh" secondAttribute="trailing" type="default" id="ptW-PS-dof"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="附近" id="Xnr-3Y-z6c"/>
+                    <connections>
+                        <outlet property="mapView" destination="eGz-bD-gFa" id="esU-1P-mgR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cj-nC-hlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349" y="696"/>
+        </scene>
+        <!--Tab Bar Controller - 創建活動-->
+        <scene sceneID="QNi-V4-Fid">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQr-tX-D2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController storyboardIdentifier="createTabBarController" definesPresentationContext="YES" id="crN-qs-Iz8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="創建活動" id="7at-2e-PJh"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="M20-uI-EP8">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gy6-2R-ZNY" kind="relationship" relationship="viewControllers" id="m9N-pj-45y"/>
+                        <segue destination="CUl-NJ-Ns0" kind="relationship" relationship="viewControllers" id="0a5-Hj-Oor"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="1555" y="462"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qSV-lm-NXs">
+            <objects>
+                <navigationController id="iaY-UW-OQo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cik-4f-U0U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="t3M-CV-6K1" kind="relationship" relationship="rootViewController" id="gNP-Hl-WRT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPW-WG-3jh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="-1029"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="FBProfilePictureView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FBProfilePictureView.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SLViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SLViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonClickHandler:"/>
+                <relationship kind="outlet" name="buttonLoginLogout" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="TPSSCreateSelectionMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSCreateSelectionMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="TPSSHomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSHomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buttonCreate" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonJoin" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userProfileImage" candidateClass="FBProfilePictureView"/>
+            </relationships>
+        </class>
+        <class className="TPSSJoinSelectionMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSJoinSelectionMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="TPSSSportListInCreateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSSportListInCreateViewController.h"/>
+        </class>
+        <class className="TPSSSportListInJoinViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSSportListInJoinViewController.h"/>
+        </class>
+        <class className="TPSSStadiumDetailInCreateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailInCreateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="createEvent:"/>
+                <relationship kind="outlet" name="buttonCreateEvent" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="labelBusInfo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelMRTInfo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelOpenTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelSports" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelStadiumName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TPSSStadiumDetailInJoinViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailInJoinViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="joinButtonClicked:"/>
+                <relationship kind="outlet" name="buttonJoin" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="labelBusInfo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelMRTInfo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelOpenTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelSport" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelStadiumName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableViewSportList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
