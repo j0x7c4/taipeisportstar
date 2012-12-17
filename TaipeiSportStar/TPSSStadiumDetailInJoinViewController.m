@@ -15,8 +15,9 @@ static NSString *CellIdentifier = @"Cell";
 @property (strong, nonatomic) IBOutlet UILabel *labelStadiumName;
 @property (strong, nonatomic) IBOutlet UILabel *labelOpenTime;
 @property (strong, nonatomic) IBOutlet UILabel *labelSport;
-@property (strong, nonatomic) IBOutlet UILabel *labelBusInfo;
-@property (strong, nonatomic) IBOutlet UILabel *labelMRTInfo;
+@property (strong, nonatomic) IBOutlet UILabel *busInfoText;
+@property (strong, nonatomic) IBOutlet UILabel *MRTInfoText;
+
 @property (strong, nonatomic) IBOutlet UIButton *buttonJoin;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewSportList;
 
@@ -43,8 +44,8 @@ static NSString *CellIdentifier = @"Cell";
     [super viewDidLoad];
   NSLog(@"%@",stadium);
     self.title = self.labelStadiumName.text = stadium[TPSSDataSourceDictKeyStadiumName];
-    self.labelBusInfo.text = stadium[TPSSDataSourceDictKeyStadiumBus];
-    self.labelMRTInfo.text = stadium[TPSSDataSourceDictKeyStadiumMrt];
+    self.busInfoText.text = [[NSString alloc]initWithFormat:@"公車路線:%@",stadium[TPSSDataSourceDictKeyStadiumBus]];
+    self.MRTInfoText.text = [[NSString alloc]initWithFormat:@"捷運路線:%@",stadium[TPSSDataSourceDictKeyStadiumMrt]];
     self.labelOpenTime.text = stadium[TPSSDataSourceDictKeyStadiumTime];
 }
 
@@ -69,7 +70,6 @@ static NSString *CellIdentifier = @"Cell";
     
     cell.textLabel.font = [UIFont systemFontOfSize:16];
     cell.textLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
-    cell.textLabel.lineBreakMode = UILineBreakModeTailTruncation;
     cell.textLabel.clipsToBounds = YES;
     
     cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
@@ -78,12 +78,11 @@ static NSString *CellIdentifier = @"Cell";
                                                      green:0.6
                                                       blue:0.8
                                                      alpha:1];
-    cell.detailTextLabel.lineBreakMode = UILineBreakModeTailTruncation;
     cell.detailTextLabel.clipsToBounds = YES;
   }
   NSUInteger row = indexPath.row;
   cell.textLabel.text = stadium[@"event"][row][@"event_sport"][TPSSDataSourceDictKeySportName];
-  //cell.detailTextLabel.text = stadium[@"event"][@"event_id"];
+  cell.detailTextLabel.text = @"創建者 參加人數";
   
   return cell;
 }
