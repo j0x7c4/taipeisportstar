@@ -123,6 +123,7 @@ static NSString *CellIdentifier = @"Cell";
   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
   TPSSStadiumDetailInJoinViewController *stadiumDetailViewController = [storyboard instantiateViewControllerWithIdentifier:@"stadiumDetailInJoin"];
   [stadiumDetailViewController setWithStadiumDictionary:stadium];
+  [stadiumDetailViewController setSelectedEventId:sport[@"event"][row][TPSSDataSourceDictKeyEventID]];
   [self.navigationController pushViewController:stadiumDetailViewController animated:YES];
 }
 

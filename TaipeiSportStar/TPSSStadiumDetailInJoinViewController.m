@@ -20,6 +20,7 @@ static NSString *CellIdentifier = @"Cell";
 @property (strong, nonatomic) IBOutlet UILabel *labelSport;
 @property (strong, nonatomic) IBOutlet UILabel *busInfoText;
 @property (strong, nonatomic) IBOutlet UILabel *MRTInfoText;
+@property (strong, nonatomic) IBOutlet UIView *actionView;
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonJoin;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewSportList;
@@ -28,6 +29,22 @@ static NSString *CellIdentifier = @"Cell";
 @implementation TPSSStadiumDetailInJoinViewController
 
 - (IBAction)joinButtonClicked:(id)sender {
+  [[FBRequest requestWithGraphPath:[[NSString alloc ]initWithFormat:@"%@/attending",selectedEventId ] parameters:nil HTTPMethod:@"POST"] startWithCompletionHandler:^(FBRequestConnection *connection,
+                                                                                                                                                                      NSDictionary<FBGraphObject> *obj,
+                                                                                                                                                                      NSError *error) {
+    if (!error) {
+      NSLog(@"event id: %@",obj);
+      [[[UIAlertView alloc] initWithTitle:@"加入活動"
+                                  message:@"加入成功"
+                                 delegate: self
+                        cancelButtonTitle:@"知道了"
+                        otherButtonTitles:nil] show];
+    }
+    else {
+      NSLog(@"%@",error);
+    }
+  }];
+
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,6 +54,9 @@ static NSString *CellIdentifier = @"Cell";
         // Custom initialization
     }
     return self;
+}
+- (void)setSelectedEventId:(NSString*)eventId {
+  selectedEventId = eventId;
 }
 - (void) setWithStadiumDictionary:(NSDictionary *)stadiumDict {
   stadium = stadiumDict;
@@ -61,6 +81,13 @@ static NSString *CellIdentifier = @"Cell";
     self.busInfoText.text = [[NSString alloc]initWithFormat:@"公車路線:%@",stadium[TPSSDataSourceDictKeyStadiumBus]];
     self.MRTInfoText.text = [[NSString alloc]initWithFormat:@"捷運路線:%@",stadium[TPSSDataSourceDictKeyStadiumMrt]];
     self.labelOpenTime.text = stadium[TPSSDataSourceDictKeyStadiumTime];
+  if ( selectedEventId ) {
+    UIButton* joinButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    joinButton.frame = CGRectMake(0, 0, 200, 44);
+    [joinButton setTitle:@"加入活動" forState:UIControlStateNormal];
+    [joinButton addTarget:self action:@selector(joinButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.actionView addSubview:joinButton];
+  }
 }
 
 - (void)didReceiveMemoryWarning

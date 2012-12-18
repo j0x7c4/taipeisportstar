@@ -12,5 +12,5 @@
                                                                      UITableViewDelegate, UIAlertViewDelegate>
 
 - (void)setWithStadiumDictionary:(NSDictionary *)stadiumDict;
-
+- (void)setSelectedEventId:(NSString*)eventId;
 @end
