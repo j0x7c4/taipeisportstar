@@ -18,6 +18,7 @@
   UIDatePicker *endDatePickerView;
   NSDictionary* selectedSport;
   NSString* selectedStartTime;
+  NSString* selectedStartTimeForShow;
   NSString* selectedEndTime;
   NSString* selectedDescription;
 }
@@ -54,12 +55,21 @@
                                     eventDescription,@"description", nil
                                     ];
     
-      [[FBRequest requestWithGraphPath:@"me/events" parameters:eventParameter HTTPMethod:@"POST"] startWithCompletionHandler:^(FBRequestConnection *connection,
+      [[FBRequest requestWithGraphPath:@"me/events"
+                            parameters:eventParameter
+                            HTTPMethod:@"POST"] startWithCompletionHandler:^(FBRequestConnection *connection,
                                                                                                                              NSDictionary<FBGraphObject> *obj,
                                                                                                                              NSError *error) {
-        NSLog(@"%@",connection);
         if (!error) {
-        
+          NSLog(@"event id: %@",obj[@"id"]);
+          if ( [TPSSDataSource createEventWith:obj[@"id"] :selectedSport[TPSSDataSourceDictKeySportID] :stadium[TPSSDataSourceDictKeyStadiumID] ] ){
+            NSString *message  = [[NSString alloc]initWithFormat:@"創建活動成功！\n活動名稱:%@\n活動時間:%@",eventName,selectedStartTimeForShow];
+            [[[UIAlertView alloc] initWithTitle:@"創建活動"
+                                       message:message
+                                      delegate: self
+                             cancelButtonTitle:@"確定"
+                             otherButtonTitles:nil] show];
+          }
         }
         else {
           NSLog(@"%@",error);
@@ -124,6 +134,7 @@
   sports = nil;
   startDatePickerView = nil;
   endDatePickerView = nil;
+  selectedStartTimeForShow = nil;
   [sportPickerView resignFirstResponder];
 }
 
@@ -228,7 +239,7 @@
   [dateformatterForTextField setDateFormat:@"yyyy年MM月dd日 HH:mm:ss"];
   [dateformatterForFBEvent_first setDateFormat:@"yyyy-MM-dd"];
   [dateformatterForFBEvent_second setDateFormat:@"HH:mm:ss"];
-  self.selectedTimeTextField.text =  [dateformatterForTextField stringFromDate:date];
+  selectedStartTimeForShow = self.selectedTimeTextField.text =  [dateformatterForTextField stringFromDate:date];
   selectedStartTime = [[NSString alloc]initWithFormat:@"%@T%@+0800",
     [dateformatterForFBEvent_first stringFromDate:date],
     [dateformatterForFBEvent_second stringFromDate:date] ];

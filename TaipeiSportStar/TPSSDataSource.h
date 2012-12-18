@@ -22,7 +22,7 @@ extern NSString * const TPSSDataSourceDictKeyStadiumLongitude;
 extern NSString * const TPSSDataSourceDictKeyStadiumImage;
 
 extern NSString * const TPSSDataSourceDictKeySportName;
-
+extern NSString * const TPSSDataSourceDictKeySportID;
 @interface TPSSDataSource : NSObject {
   // Cache data pool
   NSCache *cache;
@@ -30,6 +30,7 @@ extern NSString * const TPSSDataSourceDictKeySportName;
 
 
 + (TPSSDataSource *)sharedDataSource;
++ (BOOL) createEventWith:(NSString*)eventId:(NSString*)sportId:(NSString*)andStadiumId;
 - (void)refresh;
 - (void)cleanCache;
 - (NSDictionary *) stadiumWithID:(NSString *) ID;

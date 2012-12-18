@@ -33,6 +33,7 @@ NSString * const TPSSDataSourceDictKeyStadiumLongitude = @"long";
 NSString * const TPSSDataSourceDictKeyStadiumImage = @"image";
 
 NSString * const TPSSDataSourceDictKeySportName = @"name";
+NSString * const TPSSDataSourceDictKeySportID = @"id";
 
 @implementation TPSSDataSource
 + (TPSSDataSource *)sharedDataSource {
@@ -43,6 +44,18 @@ NSString * const TPSSDataSourceDictKeySportName = @"name";
   });
   return sharedDataSource;
   
+}
++ (BOOL) createEventWith:(NSString*)eventId:(NSString*)sportId:(NSString*)andStadiumId {
+  NSString *urlString = [[NSString alloc]initWithFormat:@"http://taipeisportstar.appspot.com/api/event/create/%@/%@/%@",eventId,sportId,andStadiumId ];
+  NSLog(@"%@",urlString);
+  NSHTTPURLResponse *response = nil;
+  NSError *error = nil;
+  NSURL *url = [NSURL URLWithString:urlString];
+  NSURLRequest* request = [NSURLRequest requestWithURL:url];
+  [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+  NSLog(@"%@",[response allHeaderFields]);
+  NSLog(@"%d",response.statusCode);
+  return response.statusCode == 200;
 }
 - (void)refresh {
   
