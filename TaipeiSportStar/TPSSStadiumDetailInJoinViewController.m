@@ -125,7 +125,7 @@ static NSString *CellIdentifier = @"Cell";
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
   if (buttonIndex == 1) {
-    [[FBRequest requestForGraphPath:[[NSString alloc ]initWithFormat:@"%@/attending",selectedEventId ]] startWithCompletionHandler:^(FBRequestConnection *connection,
+    [[FBRequest requestWithGraphPath:[[NSString alloc ]initWithFormat:@"%@/attending",selectedEventId ] parameters:nil HTTPMethod:@"POST"] startWithCompletionHandler:^(FBRequestConnection *connection,
                                                                              NSDictionary<FBGraphObject> *obj,
                                                                              NSError *error) {
       if (!error) {
