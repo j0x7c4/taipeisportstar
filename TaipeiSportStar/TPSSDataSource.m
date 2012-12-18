@@ -34,6 +34,8 @@ NSString * const TPSSDataSourceDictKeyStadiumImage = @"image";
 
 NSString * const TPSSDataSourceDictKeySportName = @"name";
 NSString * const TPSSDataSourceDictKeySportID = @"id";
+NSString * const TPSSDataSourceDictKeyEventID = @"event_id";
+NSString * const TPSSDataSourceDictKeyEventSport = @"event_sport";
 
 @implementation TPSSDataSource
 + (TPSSDataSource *)sharedDataSource {

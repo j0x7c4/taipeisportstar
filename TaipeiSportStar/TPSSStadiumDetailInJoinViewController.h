@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TPSSStadiumDetailInJoinViewController : UIViewController <UITableViewDataSource,
-                                                                     UITableViewDelegate>
+                                                                     UITableViewDelegate, UIAlertViewDelegate>
 
 - (void)setWithStadiumDictionary:(NSDictionary *)stadiumDict;
 

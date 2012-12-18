@@ -8,9 +8,12 @@
 
 #import "TPSSStadiumDetailInJoinViewController.h"
 #import "TPSSDataSource.h"
+#import <FacebookSDK/FacebookSDK.h>
 static NSString *CellIdentifier = @"Cell";
 @interface TPSSStadiumDetailInJoinViewController () {
+  NSArray * events;
   NSDictionary *stadium;
+  NSString* selectedEventId;
 }
 @property (strong, nonatomic) IBOutlet UILabel *labelStadiumName;
 @property (strong, nonatomic) IBOutlet UILabel *labelOpenTime;
@@ -37,6 +40,18 @@ static NSString *CellIdentifier = @"Cell";
 }
 - (void) setWithStadiumDictionary:(NSDictionary *)stadiumDict {
   stadium = stadiumDict;
+  NSMutableArray* eventsBuffer = [[NSMutableArray alloc]init];
+  for (int i = 0 ; i<[stadium[@"event"] count] ; i++ ) {
+    NSDictionary *event;
+    NSString* eventId = stadium[@"event"][i][@"event_id"];
+    NSLog(@"%@",eventId);
+    event = [[NSDictionary alloc]initWithObjectsAndKeys:eventId,TPSSDataSourceDictKeyEventID,
+             stadium[@"event"][i][@"event_sport"][TPSSDataSourceDictKeySportName],TPSSDataSourceDictKeyEventSport,
+             nil];
+    [eventsBuffer addObject:event];
+  }
+  events = [[NSArray alloc]initWithArray:eventsBuffer];
+  eventsBuffer = nil;
 }
 - (void)viewDidLoad
 {
@@ -80,7 +95,7 @@ static NSString *CellIdentifier = @"Cell";
     cell.detailTextLabel.clipsToBounds = YES;
   }
   NSUInteger row = indexPath.row;
-  cell.textLabel.text = stadium[@"event"][row][@"event_sport"][TPSSDataSourceDictKeySportName];
+  cell.textLabel.text = events[row][TPSSDataSourceDictKeyEventSport];
   cell.detailTextLabel.text = @"創建者 參加人數";
   
   return cell;
@@ -88,8 +103,7 @@ static NSString *CellIdentifier = @"Cell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  NSLog(@"--------------%u",[stadium[@"event"] count]);
-  return [stadium[@"event"] count];
+  return [events count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -99,6 +113,33 @@ static NSString *CellIdentifier = @"Cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  // Do nothing for now
+  selectedEventId = events[indexPath.row][TPSSDataSourceDictKeyEventID];
+  NSString* message = [[NSString alloc]initWithFormat:@"是否確定加入%@?",events[indexPath.row][TPSSDataSourceDictKeyEventSport] ];
+  [[[UIAlertView alloc] initWithTitle:@"加入活動"
+                              message:message
+                             delegate: self
+                    cancelButtonTitle:@"取消"
+                    otherButtonTitles:@"確定",nil] show];
+  
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+  if (buttonIndex == 1) {
+    [[FBRequest requestForGraphPath:[[NSString alloc ]initWithFormat:@"%@/attending",selectedEventId ]] startWithCompletionHandler:^(FBRequestConnection *connection,
+                                                                             NSDictionary<FBGraphObject> *obj,
+                                                                             NSError *error) {
+      if (!error) {
+        NSLog(@"event id: %@",obj);
+          [[[UIAlertView alloc] initWithTitle:@"加入活動"
+                                      message:@"加入成功"
+                                      delegate: self
+                            cancelButtonTitle:@"知道了"
+                            otherButtonTitles:nil] show];
+      }
+      else {
+        NSLog(@"%@",error);
+      }
+    }];
+  }
 }
 @end

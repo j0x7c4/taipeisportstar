@@ -23,6 +23,9 @@ extern NSString * const TPSSDataSourceDictKeyStadiumImage;
 
 extern NSString * const TPSSDataSourceDictKeySportName;
 extern NSString * const TPSSDataSourceDictKeySportID;
+
+extern NSString * const TPSSDataSourceDictKeyEventID;
+extern NSString * const TPSSDataSourceDictKeyEventSport;
 @interface TPSSDataSource : NSObject {
   // Cache data pool
   NSCache *cache;

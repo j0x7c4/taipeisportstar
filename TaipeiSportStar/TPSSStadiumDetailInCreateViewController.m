@@ -67,7 +67,7 @@
             [[[UIAlertView alloc] initWithTitle:@"創建活動"
                                        message:message
                                       delegate: self
-                             cancelButtonTitle:@"確定"
+                             cancelButtonTitle:@"知道了"
                              otherButtonTitles:nil] show];
           }
         }
