@@ -343,8 +343,8 @@
                         <outlet property="labelOpenTime" destination="CKS-CA-7CO" id="4CQ-c3-U59"/>
                         <outlet property="labelSports" destination="hg4-jf-5kD" id="iWo-AU-WlH"/>
                         <outlet property="labelStadiumName" destination="T1r-hj-sWM" id="5KG-Qa-04n"/>
-                        <outlet property="selectedSport" destination="CpB-iH-qXa" id="0v5-uZ-zYP"/>
-                        <outlet property="selectedTime" destination="K81-9a-5Oa" id="5A0-eX-miU"/>
+                        <outlet property="selectedSportTextField" destination="CpB-iH-qXa" id="SM6-CH-qhZ"/>
+                        <outlet property="selectedTimeTextField" destination="K81-9a-5Oa" id="Aq6-7l-Kk1"/>
                         <outlet property="view" destination="lBK-xE-S1f" id="Aqa-qW-nyt"/>
                     </connections>
                 </viewController>

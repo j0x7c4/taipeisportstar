@@ -12,4 +12,5 @@
 UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 - (void)setWithStadiumDictionary:(NSDictionary *)stadiumDict;
+- (void)setSelectedSport:(NSDictionary*)sport;
 @end

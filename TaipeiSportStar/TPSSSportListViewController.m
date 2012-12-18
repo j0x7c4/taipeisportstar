@@ -86,7 +86,7 @@ static NSString *CellIdentifier = @"Cell";
   NSLog(@"%@" ,sport);
   //Create a tableView child view
   TPSSStadiumListInCreateViewController *stadiumListViewController =[[TPSSStadiumListInCreateViewController alloc]initWithSportName:sport[TPSSDataSourceDictKeySportName]];
-  
+  stadiumListViewController.title = sport[TPSSDataSourceDictKeySportName];
   // Ask navigation controller to show it.
   [self.navigationController pushViewController:stadiumListViewController animated:YES];
 }

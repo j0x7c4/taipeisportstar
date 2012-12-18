@@ -131,8 +131,16 @@ static NSString *CellIdentifier = @"Cell";
   
   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
   TPSSStadiumDetailInCreateViewController *stadiumDetailViewController = [storyboard instantiateViewControllerWithIdentifier:@"stadiumDetailInCreate"];
-  [stadiumDetailViewController setWithStadiumDictionary:stadium];
-  [self.navigationController pushViewController:stadiumDetailViewController animated:YES];
+  
+  NSArray * sports = [stadium[TPSSDataSourceDictKeyStadiumSports] allValues];
+  
+  NSPredicate *predicter = [NSPredicate predicateWithFormat:@"name = %@",self.title];
+  NSArray* results = [sports filteredArrayUsingPredicate:predicter];
+  if ( [results count] > 0 ) {
+    [stadiumDetailViewController setWithStadiumDictionary:stadium];
+    [stadiumDetailViewController setSelectedSport:results[0]];
+    [self.navigationController pushViewController:stadiumDetailViewController animated:YES];
+  }
   
 }
 
