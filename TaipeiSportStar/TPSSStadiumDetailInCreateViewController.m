@@ -29,7 +29,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonCreateEvent;
 @property (strong, nonatomic) IBOutlet UITextField *selectedSportTextField;
 @property (strong, nonatomic) IBOutlet UITextField *selectedTimeTextField;
-@property (strong, nonatomic) IBOutlet UITextView *eventDescription;
+@property (strong, nonatomic) IBOutlet UITextField *eventDescription;
 
 @end
 
@@ -37,15 +37,16 @@
 
 - (IBAction)createEvent:(id)sender {
   if (FBSession.activeSession.isOpen) {
-    NSString *eventSportName = selectedSport[TPSSDataSourceDictKeySportName];
-    NSString *eventStadiumName = stadium[TPSSDataSourceDictKeyStadiumName];
-    NSString *eventLocation = stadium[TPSSDataSourceDictKeyStadiumAddress];
-    NSString *eventDescription = [[NSString alloc]initWithFormat:@"台北運動星\n%@",selectedDescription];
-    NSString *eventName = [[NSString alloc]initWithFormat:@"%@ @ %@",eventSportName,eventStadiumName];
-    NSString *eventStartTime = selectedStartTime;
-    NSLog(@"%@",selectedStartTime);
+    if ( selectedSport && selectedStartTime ) {
+      NSString *eventSportName = selectedSport[TPSSDataSourceDictKeySportName];
+      NSString *eventStadiumName = stadium[TPSSDataSourceDictKeyStadiumName];
+      NSString *eventLocation = stadium[TPSSDataSourceDictKeyStadiumAddress];
+      NSString *eventDescription = [[NSString alloc]initWithFormat:@"台北運動星\n%@",selectedDescription];
+      NSString *eventName = [[NSString alloc]initWithFormat:@"%@ @ %@",eventSportName,eventStadiumName];
+      NSString *eventStartTime = selectedStartTime;
+      NSLog(@"%@",selectedStartTime);
     
-    NSDictionary *eventParameter = [[NSDictionary alloc] initWithObjectsAndKeys:
+      NSDictionary *eventParameter = [[NSDictionary alloc] initWithObjectsAndKeys:
                                     FBSession.activeSession.accessToken,@"access_token",
                                     eventName,@"name",
                                     eventStartTime,@"start_time",
@@ -53,24 +54,34 @@
                                     eventDescription,@"description", nil
                                     ];
     
-    [[FBRequest requestWithGraphPath:@"me/events" parameters:eventParameter HTTPMethod:@"POST"] startWithCompletionHandler:^(FBRequestConnection *connection,
+      [[FBRequest requestWithGraphPath:@"me/events" parameters:eventParameter HTTPMethod:@"POST"] startWithCompletionHandler:^(FBRequestConnection *connection,
                                                                                                                              NSDictionary<FBGraphObject> *obj,
                                                                                                                              NSError *error) {
-      NSLog(@"%@",connection);
-      if (!error) {
+        NSLog(@"%@",connection);
+        if (!error) {
         
-      }
-      else {
-        NSLog(@"%@",error);
-      }
-    }];
-    eventDescription = nil;
-    eventLocation = nil;
-    eventName = nil;
-    eventParameter = nil;
-    eventSportName = nil;
-    eventStadiumName = nil;
-    eventStartTime = nil;
+        }
+        else {
+          NSLog(@"%@",error);
+        }
+      }];
+      eventDescription = nil;
+      eventLocation = nil;
+      eventName = nil;
+      eventParameter = nil;
+      eventSportName = nil;
+      eventStadiumName = nil;
+      eventStartTime = nil;
+    }
+    else {
+      UIAlertView *tip = [[UIAlertView alloc] initWithTitle:@"創建活動"
+                                                      message:@"請選擇體育項目和活動時間"
+                                                     delegate: self
+                                            cancelButtonTitle:@"確定"
+                                            otherButtonTitles:nil];
+      [tip show];
+      
+    }
   }
 }
 
@@ -169,6 +180,21 @@
     [keyboardButtonView setItems:[NSArray arrayWithObjects:doneButton,cancelButton, nil]];
     textField.inputAccessoryView = keyboardButtonView;
   }
+  else if (textField.tag == 3 ) {
+    UIToolbar* keyboardButtonView = [[UIToolbar alloc] init];
+    keyboardButtonView.barStyle = UIBarStyleBlack;
+    keyboardButtonView.translucent = YES;
+    keyboardButtonView.tintColor = nil;
+    [keyboardButtonView sizeToFit];
+    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"確定"
+                                                                   style:UIBarButtonItemStyleBordered target:self
+                                                                  action:@selector(descriptionDoneClicked:)];
+    UIBarButtonItem* cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"取消"
+                                                                     style:UIBarButtonItemStyleBordered target:self
+                                                                    action:@selector(descriptionCancelClicked:)];
+    [keyboardButtonView setItems:[NSArray arrayWithObjects:doneButton,cancelButton, nil]];
+    textField.inputAccessoryView = keyboardButtonView;
+  }
   
   return YES;
   
@@ -214,5 +240,13 @@
 }
 - (void)datePickerCancelClicked: (id)sender {
   [self.selectedTimeTextField endEditing:YES];
+}
+- (void)descriptionCancelClicked: (id)sender {
+  selectedDescription=self.eventDescription.text = @"";
+  [self.eventDescription endEditing:YES];
+}
+- (void)descriptionDoneClicked: (id)sender {
+  selectedDescription = self.eventDescription.text;
+  [self.eventDescription endEditing:YES];
 }
 @end
