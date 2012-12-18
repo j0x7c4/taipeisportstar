@@ -100,18 +100,20 @@ NSString *const FBSessionStateChangedNotification =
  */
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
   NSArray *permissions = [[NSArray alloc] initWithObjects:
-                          @"email",
-                          @"user_likes",
+                          @"create_event",
+                          @"rsvp_event",
                           nil];
-  return [FBSession openActiveSessionWithReadPermissions:permissions
-                                            allowLoginUI:allowLoginUI
-                                       completionHandler:^(FBSession *session,
-                                                           FBSessionState state,
-                                                           NSError *error) {
-                                         [self sessionStateChanged:session
-                                                             state:state
-                                                             error:error];
-                                       }];
+
+  return [FBSession openActiveSessionWithPublishPermissions:permissions
+                                            defaultAudience:FBSessionDefaultAudienceEveryone
+                                               allowLoginUI:allowLoginUI
+                                          completionHandler:^(FBSession *session,
+                                                              FBSessionState state,
+                                                              NSError *error) {
+                                            [self sessionStateChanged:session
+                                                                state:state
+                                                                error:error];
+                                          }];
 }
 
 - (void) closeSession {

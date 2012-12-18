@@ -8,6 +8,8 @@
 
 #import "TPSSStadiumDetailInCreateViewController.h"
 #import "TPSSDataSource.h"
+#import <FacebookSDK/FacebookSDK.h>
+
 @interface TPSSStadiumDetailInCreateViewController () {
   NSDictionary *stadium;
 }
@@ -23,7 +25,27 @@
 @implementation TPSSStadiumDetailInCreateViewController
 
 - (IBAction)createEvent:(id)sender {
-
+  if (FBSession.activeSession.isOpen) {
+    NSDictionary *eventParameter = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                    FBSession.activeSession.accessToken,@"access_token",
+                                    @"test_event",@"name",
+                                    @"2012-12-18T15:55:30+0800",@"start_time",
+                                    @"aaa",@"location",
+                                    @"bbb",@"description", nil
+                                    ];
+    
+    [[FBRequest requestWithGraphPath:@"me/events" parameters:eventParameter HTTPMethod:@"POST"] startWithCompletionHandler:^(FBRequestConnection *connection,
+                                                                                                                             NSDictionary<FBGraphObject> *obj,
+                                                                                                                             NSError *error) {
+      NSLog(@"%@",connection);
+      if (!error) {
+        
+      }
+      else {
+        NSLog(@"%@",error);
+      }
+    }];
+  }
 }
 
 - (void) setWithStadiumDictionary:(NSDictionary *)stadiumDict {

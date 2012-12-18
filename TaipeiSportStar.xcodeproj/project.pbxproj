@@ -191,9 +191,9 @@
 				18452CC0166F81F900ED5480 /* TPSSAppDelegate.h */,
 				18452CC1166F81F900ED5480 /* TPSSAppDelegate.m */,
 				18452CC9166F81F900ED5480 /* MainStoryboard.storyboard */,
-				18452CB8166F81F900ED5480 /* Supporting Files */,
 				180C732B1670BE8C00C445CA /* TPSSHomeViewController.h */,
 				180C732C1670BE8C00C445CA /* TPSSHomeViewController.m */,
+				18452CB8166F81F900ED5480 /* Supporting Files */,
 			);
 			path = TaipeiSportStar;
 			sourceTree = "<group>";
