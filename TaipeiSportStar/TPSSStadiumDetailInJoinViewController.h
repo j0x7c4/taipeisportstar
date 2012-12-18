@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TPSSStadiumDetailInJoinViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@interface TPSSStadiumDetailInJoinViewController : UIViewController <UITableViewDataSource,
+                                                                     UITableViewDelegate>
 
 - (void)setWithStadiumDictionary:(NSDictionary *)stadiumDict;
 

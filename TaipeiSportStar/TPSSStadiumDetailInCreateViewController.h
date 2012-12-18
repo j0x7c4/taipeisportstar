@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TPSSStadiumDetailInCreateViewController : UIViewController
+@interface TPSSStadiumDetailInCreateViewController : UIViewController <
+UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 - (void)setWithStadiumDictionary:(NSDictionary *)stadiumDict;
 @end

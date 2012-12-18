@@ -20,7 +20,6 @@ static NSString *CellIdentifier = @"Cell";
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonJoin;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewSportList;
-
 @end
 
 @implementation TPSSStadiumDetailInJoinViewController

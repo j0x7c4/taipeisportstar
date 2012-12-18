@@ -241,9 +241,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stadium name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1r-hj-sWM">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="uEg-Fo-YVV"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -281,35 +278,73 @@
                                     <action selector="createEvent:" destination="J5m-fh-GIQ" eventType="touchUpInside" id="4n7-Pf-Uhy"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="描述（可選）" translatesAutoresizingMaskIntoConstraints="NO" id="SgL-Eb-ctL">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="gs8-MK-QUP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="J5m-fh-GIQ" id="kB8-xc-Gss"/>
+                                </connections>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="選擇運動" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CpB-iH-qXa">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="J5m-fh-GIQ" id="GlP-0D-ypi"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="選擇時間" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K81-9a-5Oa">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="J5m-fh-GIQ" id="5oc-IA-cWq"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CKS-CA-7CO" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Y0-UC-wG7"/>
+                            <constraint firstItem="CpB-iH-qXa" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="184" id="6sy-ZV-h5V"/>
+                            <constraint firstAttribute="trailing" secondItem="SgL-Eb-ctL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="91I-GA-baw"/>
                             <constraint firstAttribute="bottom" secondItem="5mu-Dg-vpY" secondAttribute="bottom" constant="50" type="user" id="C2G-pj-0VX"/>
                             <constraint firstItem="FdS-Rs-ID0" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DyQ-Rn-d9S"/>
+                            <constraint firstAttribute="trailing" secondItem="CpB-iH-qXa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="JKr-Tp-ohw"/>
+                            <constraint firstAttribute="trailing" secondItem="K81-9a-5Oa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Oej-J4-fX3"/>
                             <constraint firstAttribute="trailing" secondItem="hDK-BE-kwj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PTY-UW-xSv"/>
+                            <constraint firstItem="CpB-iH-qXa" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QU1-1O-8WB"/>
                             <constraint firstAttribute="trailing" secondItem="hg4-jf-5kD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Rrb-lN-GWi"/>
                             <constraint firstItem="T1r-hj-sWM" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Saw-aG-Dsf"/>
                             <constraint firstItem="CKS-CA-7CO" firstAttribute="top" secondItem="T1r-hj-sWM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VIL-6J-avm"/>
                             <constraint firstItem="hg4-jf-5kD" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="W93-w2-djC"/>
                             <constraint firstItem="hDK-BE-kwj" firstAttribute="top" secondItem="hg4-jf-5kD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Woz-Nj-lAT"/>
                             <constraint firstAttribute="trailing" secondItem="FdS-Rs-ID0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="a4o-Kt-ACc"/>
+                            <constraint firstItem="SgL-Eb-ctL" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="271" id="b1Y-nt-XWf"/>
                             <constraint firstItem="T1r-hj-sWM" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cMD-jk-hm4"/>
                             <constraint firstItem="hDK-BE-kwj" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cig-9T-4ix"/>
                             <constraint firstAttribute="trailing" secondItem="CKS-CA-7CO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="epz-ia-gyr"/>
+                            <constraint firstItem="K81-9a-5Oa" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="228" id="fIL-rB-IFD"/>
                             <constraint firstAttribute="centerX" secondItem="5mu-Dg-vpY" secondAttribute="centerX" type="user" id="ier-sr-9gP"/>
                             <constraint firstItem="hg4-jf-5kD" firstAttribute="top" secondItem="CKS-CA-7CO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lxa-ak-G7U"/>
                             <constraint firstAttribute="trailing" secondItem="T1r-hj-sWM" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="n4I-sb-ni3"/>
                             <constraint firstItem="FdS-Rs-ID0" firstAttribute="top" secondItem="hDK-BE-kwj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wWd-gS-84Y"/>
+                            <constraint firstItem="CKS-CA-7CO" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="53" id="y3y-3Z-JIY"/>
+                            <constraint firstItem="SgL-Eb-ctL" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="z2a-U1-h2e"/>
+                            <constraint firstItem="K81-9a-5Oa" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zP2-lg-j6V"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="buttonCreateEvent" destination="5mu-Dg-vpY" id="gtV-xy-ocG"/>
+                        <outlet property="eventDescription" destination="SgL-Eb-ctL" id="gIe-3e-6Zo"/>
                         <outlet property="labelBusInfo" destination="hDK-BE-kwj" id="2hb-kU-xCV"/>
                         <outlet property="labelMRTInfo" destination="FdS-Rs-ID0" id="nnN-5u-Lo0"/>
                         <outlet property="labelOpenTime" destination="CKS-CA-7CO" id="4CQ-c3-U59"/>
                         <outlet property="labelSports" destination="hg4-jf-5kD" id="iWo-AU-WlH"/>
                         <outlet property="labelStadiumName" destination="T1r-hj-sWM" id="5KG-Qa-04n"/>
+                        <outlet property="selectedSport" destination="CpB-iH-qXa" id="0v5-uZ-zYP"/>
+                        <outlet property="selectedTime" destination="K81-9a-5Oa" id="5A0-eX-miU"/>
                         <outlet property="view" destination="lBK-xE-S1f" id="Aqa-qW-nyt"/>
                     </connections>
                 </viewController>
@@ -432,7 +467,6 @@
         <!--Tab Bar Controller - 創建活動-->
         <scene sceneID="QNi-V4-Fid">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NQr-tX-D2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="createTabBarController" definesPresentationContext="YES" id="crN-qs-Iz8" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="創建活動" id="7at-2e-PJh"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -446,6 +480,7 @@
                         <segue destination="CUl-NJ-Ns0" kind="relationship" relationship="viewControllers" id="0a5-Hj-Oor"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQr-tX-D2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1555" y="462"/>
         </scene>
@@ -468,73 +503,6 @@
             <point key="canvasLocation" x="1060" y="-1029"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="FBProfilePictureView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FBProfilePictureView.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SLViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SLViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonClickHandler:"/>
-                <relationship kind="outlet" name="buttonLoginLogout" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="TPSSCreateSelectionMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSCreateSelectionMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="TPSSHomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSHomeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="buttonCreate" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonJoin" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userProfileImage" candidateClass="FBProfilePictureView"/>
-            </relationships>
-        </class>
-        <class className="TPSSJoinSelectionMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSJoinSelectionMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="TPSSSportListInCreateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSSportListInCreateViewController.h"/>
-        </class>
-        <class className="TPSSSportListInJoinViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSSportListInJoinViewController.h"/>
-        </class>
-        <class className="TPSSStadiumDetailInCreateViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailInCreateViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="createEvent:"/>
-                <relationship kind="outlet" name="buttonCreateEvent" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelBusInfo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelMRTInfo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelOpenTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelSports" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelStadiumName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TPSSStadiumDetailInJoinViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailInJoinViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="joinButtonClicked:"/>
-                <relationship kind="outlet" name="MRTInfoText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="busInfoText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buttonJoin" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelOpenTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelSport" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelStadiumName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableViewSportList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
