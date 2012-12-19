@@ -67,7 +67,9 @@ static NSString *CellIdentifier = @"Cell";
     [super viewDidLoad];
   if ( selectedEventId ) {
     UIButton* joinButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    joinButton.frame = CGRectMake(0, 0, 200, 44);
+    NSInteger buttonHeight = 44;
+    NSInteger buttonWidth = 200;
+    joinButton.frame = CGRectMake(160-buttonWidth/2, 0, buttonWidth, buttonHeight);
     [joinButton setTitle:@"加入活動" forState:UIControlStateNormal];
     [joinButton addTarget:self action:@selector(joinButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.actionView addSubview:joinButton];
