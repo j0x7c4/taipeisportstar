@@ -10,7 +10,7 @@
             <objects>
                 <viewController id="t3M-CV-6K1" customClass="SLViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zdF-3g-D16">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aV-JW-YBq">
@@ -48,20 +48,9 @@
             <objects>
                 <viewController storyboardIdentifier="homeViewController" id="2" customClass="TPSSHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsa-Cb-zCy" customClass="FBProfilePictureView">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-WQ-YjC">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="zNV-0Z-wzV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x9-mA-NlA">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="加入活動">
@@ -88,29 +77,69 @@
                                     <segue destination="crN-qs-Iz8" kind="push" id="SQw-HJ-ZhZ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weather Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz9-ti-YRC">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="BYp-ej-csT"/>
+                                    <constraint firstAttribute="width" constant="159" id="WnD-QP-uPl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Temp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xh8-vp-BQ6">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFG-jq-TK7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Jwp-Kd-bkg"/>
+                                    <constraint firstAttribute="width" constant="52" id="LAi-t2-vEH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNw-Ld-nhj">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ZvC-0n-5T2"/>
+                                    <constraint firstAttribute="width" constant="136" id="fx7-52-ion"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="user ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6B-F4-5jX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="UOz-Yh-m7o"/>
+                                    <constraint firstAttribute="width" constant="117" id="Upa-Ta-htw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uUs-cs-aWs" secondAttribute="trailing" constant="50" type="user" id="2pd-Y6-dqE"/>
                             <constraint firstItem="8x9-mA-NlA" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="50" type="user" id="38X-bQ-UQZ"/>
-                            <constraint firstAttribute="bottom" secondItem="Jsa-Cb-zCy" secondAttribute="bottom" constant="378" id="4jd-eb-XSW"/>
+                            <constraint firstItem="iNw-Ld-nhj" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6d2-bW-PSI"/>
+                            <constraint firstItem="lz9-ti-YRC" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="8H5-HO-F7c"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8x9-mA-NlA" secondAttribute="bottom" constant="50" type="user" id="9cL-MC-52a"/>
-                            <constraint firstItem="Jsa-Cb-zCy" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="FVK-WF-q47"/>
                             <constraint firstAttribute="bottom" secondItem="8x9-mA-NlA" secondAttribute="bottom" constant="50" id="MLE-7v-6Ru"/>
-                            <constraint firstAttribute="trailing" secondItem="Jsa-Cb-zCy" secondAttribute="trailing" constant="150" id="Pmg-TC-xrO"/>
-                            <constraint firstItem="9bM-WQ-YjC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jsa-Cb-zCy" secondAttribute="trailing" constant="10" type="user" id="X8Y-fI-nZz"/>
-                            <constraint firstAttribute="trailing" secondItem="9bM-WQ-YjC" secondAttribute="trailing" constant="10" id="YVd-CZ-7Ci"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jsa-Cb-zCy" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="ckU-cR-TcV"/>
-                            <constraint firstItem="Jsa-Cb-zCy" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="o9q-oV-Jws"/>
+                            <constraint firstItem="lz9-ti-YRC" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="117" id="N48-Vq-rnR"/>
+                            <constraint firstItem="kFG-jq-TK7" firstAttribute="top" secondItem="3" secondAttribute="top" constant="213" id="b4n-Ab-Cfh"/>
+                            <constraint firstItem="kFG-jq-TK7" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="33" id="c5Z-lq-65A"/>
+                            <constraint firstItem="xh8-vp-BQ6" firstAttribute="centerX" secondItem="lz9-ti-YRC" secondAttribute="centerX" type="default" id="cp2-GQ-XO6"/>
+                            <constraint firstAttribute="trailing" secondItem="z6B-F4-5jX" secondAttribute="trailing" constant="27" id="fYs-Mw-3wD"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uUs-cs-aWs" secondAttribute="bottom" constant="50" type="user" id="tLb-fq-FgD"/>
-                            <constraint firstItem="9bM-WQ-YjC" firstAttribute="top" secondItem="3" secondAttribute="top" constant="43" id="uT3-Nw-21m"/>
+                            <constraint firstItem="iNw-Ld-nhj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ucN-Mz-Thy"/>
                             <constraint firstItem="uUs-cs-aWs" firstAttribute="baseline" secondItem="8x9-mA-NlA" secondAttribute="baseline" type="default" id="xUc-oy-cEt"/>
+                            <constraint firstItem="z6B-F4-5jX" firstAttribute="top" secondItem="3" secondAttribute="top" constant="55" id="ynR-cK-tnc"/>
+                            <constraint firstAttribute="bottom" secondItem="xh8-vp-BQ6" secondAttribute="bottom" constant="158" id="zeL-wo-6ie"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我可以做什麼？" id="onF-G8-0jy"/>
                     <connections>
-                        <outlet property="userNameLabel" destination="9bM-WQ-YjC" id="ZYq-2p-48J"/>
-                        <outlet property="userProfileImage" destination="Jsa-Cb-zCy" id="y5Q-gz-zNx"/>
+                        <outlet property="userNameLabel" destination="z6B-F4-5jX" id="MUW-To-72Q"/>
+                        <outlet property="userProfilePic" destination="iNw-Ld-nhj" id="WaW-z1-MDl"/>
+                        <outlet property="weatherIcon" destination="kFG-jq-TK7" id="lEB-yJ-SkQ"/>
+                        <outlet property="weatherTemp" destination="xh8-vp-BQ6" id="Oqa-3g-Eyj"/>
+                        <outlet property="weatherText" destination="lz9-ti-YRC" id="jct-Rz-IjN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -122,7 +151,7 @@
             <objects>
                 <viewController storyboardIdentifier="stadiumDetailInJoin" id="mM0-TQ-pZa" customClass="TPSSStadiumDetailInJoinViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6v6-Cb-zXC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stadium name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-Wo-WYi">
@@ -217,7 +246,7 @@
             <objects>
                 <tableViewController id="CUl-NJ-Ns0" customClass="TPSSSportListInCreateViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cNm-f4-peF">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -248,7 +277,7 @@
             <objects>
                 <viewController storyboardIdentifier="stadiumDetailInCreate" id="J5m-fh-GIQ" customClass="TPSSStadiumDetailInCreateViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lBK-xE-S1f">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stadium name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1r-hj-sWM">
@@ -366,7 +395,7 @@
             <objects>
                 <viewController storyboardIdentifier="joinSelectionMapViewController" id="9gw-Iz-k8X" customClass="TPSSJoinSelectionMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K9Z-4F-qbv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lN8-BO-leh">
@@ -417,7 +446,7 @@
             <objects>
                 <tableViewController id="A4q-eo-s25" customClass="TPSSSportListInJoinViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a2f-wx-ga8">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -447,7 +476,7 @@
             <objects>
                 <viewController id="gy6-2R-ZNY" customClass="TPSSCreateSelectionMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aMf-Al-ZYh">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGz-bD-gFa">
@@ -513,9 +542,6 @@
         </scene>
     </scenes>
     <classes>
-        <class className="FBProfilePictureView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FBProfilePictureView.h"/>
-        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -538,7 +564,10 @@
                 <relationship kind="outlet" name="buttonCreate" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonJoin" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userProfileImage" candidateClass="FBProfilePictureView"/>
+                <relationship kind="outlet" name="userProfilePic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="weatherIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="weatherTemp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weatherText" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TPSSJoinSelectionMapViewController" superclassName="UIViewController">
@@ -575,7 +604,6 @@
                 <relationship kind="outlet" name="MRTInfoText" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="actionView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="busInfoText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buttonJoin" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelOpenTime" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelSport" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelStadiumName" candidateClass="UILabel"/>
@@ -586,6 +614,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

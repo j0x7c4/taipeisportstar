@@ -9,13 +9,15 @@
 #import "TPSSHomeViewController.h"
 #import "TPSSJoinSelectionMapViewController.h"
 #import "TPSSCreateSelectionMapViewController.h"
+#import "TPSSDataSource.h"
 
 @interface TPSSHomeViewController ()
-@property (strong, nonatomic) IBOutlet UIButton *buttonJoin;
-@property (strong, nonatomic) IBOutlet UIButton *buttonCreate;
-@property (strong, nonatomic) IBOutlet FBProfilePictureView *userProfileImage;
 @property (strong, nonatomic) IBOutlet UILabel *userNameLabel;
-//@property (strong, nonatomic) IBOutlet UITableView *menuTableView;
+
+@property (strong, nonatomic) IBOutlet UIImageView *userProfilePic;
+@property (strong, nonatomic) IBOutlet UIImageView *weatherIcon;
+@property (strong, nonatomic) IBOutlet UILabel *weatherText;
+@property (strong, nonatomic) IBOutlet UILabel *weatherTemp;
 
 @end
 
@@ -34,13 +36,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-  if ( !FBSession.activeSession.isOpen) {
+  if ( FBSession.activeSession.isOpen) {
   }
+  NSDictionary* weather = [[TPSSDataSource sharedDataSource] currentWeather];
+  [self showWeatherWithWeatherDict:weather];
+  NSLog(@"%@",weather);
 }
 
+- (void) showWeatherWithWeatherDict:(NSDictionary*)weather {
+  
+  NSURL *url = [NSURL URLWithString:weather[TPSSDataSourceDictKeyWeatherImage][TPSSDataSourceDictKeyWeatherImageUrl]];
+  NSData *imageData = [NSData dataWithContentsOfURL:url];
+  [self.weatherIcon setImage:[UIImage imageWithData:imageData]];
+  self.weatherText.text = weather[TPSSDataSourceDictKeyWeatherCondition][TPSSDataSourceDictKeyWeatherConditionText];
+  self.weatherTemp.text = [[NSString alloc ]initWithFormat:@"溫度: %@℃", weather[TPSSDataSourceDictKeyWeatherCondition][TPSSDataSourceDictKeyWeatherConditionTemp] ];
+}
 -(void)viewWillAppear:(BOOL)animated{
   [super viewWillAppear:animated];
-  
   if (FBSession.activeSession.isOpen) {
     [self populateUserDetails];
   }
@@ -63,7 +75,15 @@
        if (!error) {
          NSLog(@"@%@,%@", user.name, user.id);
          self.userNameLabel.text = user.name;
-         self.userProfileImage.profileID = user.id;
+         NSString *urlString = [NSString
+                                stringWithFormat:
+                                @"http://graph.facebook.com/%@/picture?type=large",user.id];
+         
+         NSURL *url = [NSURL URLWithString:urlString];
+         
+         NSData *imageData = [NSData dataWithContentsOfURL:url];
+         [self.userProfilePic setImage:[UIImage imageWithData:imageData]];
+
        }
      }];
   }

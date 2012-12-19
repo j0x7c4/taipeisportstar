@@ -37,6 +37,18 @@ NSString * const TPSSDataSourceDictKeySportID = @"id";
 NSString * const TPSSDataSourceDictKeyEventID = @"event_id";
 NSString * const TPSSDataSourceDictKeyEventSport = @"event_sport";
 
+NSString * const TPSSDataSourceDictKeyWeatherCondition = @"condition";
+NSString * const TPSSDataSourceDictKeyWeatherConditionCode = @"code";
+NSString * const TPSSDataSourceDictKeyWeatherConditionTemp = @"temp";
+NSString * const TPSSDataSourceDictKeyWeatherConditionText = @"text";
+
+NSString * const TPSSDataSourceDictKeyWeatherImage = @"image";
+NSString * const TPSSDataSourceDictKeyWeatherImageHeight = @"height";
+NSString * const TPSSDataSourceDictKeyWeatherImageWidth = @"width";
+NSString * const TPSSDataSourceDictKeyWeatherImageUrl = @"url";
+NSString * const TPSSDataSourceDictKeyWeatherLocation = @"location";
+NSString * const TPSSDataSourceDictKeyWeatherImageTime = @"time";
+
 @implementation TPSSDataSource
 + (TPSSDataSource *)sharedDataSource {
   static dispatch_once_t once;
@@ -225,5 +237,11 @@ NSString * const TPSSDataSourceDictKeyEventSport = @"event_sport";
   NSArray *sports=(NSArray *)[data mutableObjectFromJSONData];
   return sports;
 }
-
+- (NSDictionary *) currentWeather {
+  NSString *strURL = @"http://taipeisportstar.appspot.com/api/weather";
+  NSURL *jsonURL = [NSURL URLWithString:strURL];
+  NSString *jsonstring = [[NSString alloc] initWithContentsOfURL:jsonURL encoding:NSUTF8StringEncoding error:nil];
+  NSData *data=[jsonstring dataUsingEncoding:NSUTF8StringEncoding];
+  return (NSDictionary *)[data mutableObjectFromJSONData];
+}
 @end

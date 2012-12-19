@@ -21,8 +21,6 @@ static NSString *CellIdentifier = @"Cell";
 @property (strong, nonatomic) IBOutlet UILabel *busInfoText;
 @property (strong, nonatomic) IBOutlet UILabel *MRTInfoText;
 @property (strong, nonatomic) IBOutlet UIView *actionView;
-
-@property (strong, nonatomic) IBOutlet UIButton *buttonJoin;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewSportList;
 @end
 
@@ -42,6 +40,11 @@ static NSString *CellIdentifier = @"Cell";
     }
     else {
       NSLog(@"%@",error);
+      [[[UIAlertView alloc] initWithTitle:@"加入活動"
+                                  message:@"加入失敗,可能你已經加入該活動了"
+                                 delegate: self
+                        cancelButtonTitle:@"知道了"
+                        otherButtonTitles:nil] show];
     }
   }];
 

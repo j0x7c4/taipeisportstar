@@ -72,7 +72,7 @@
 
 #pragma mark Template generated code
 
-- (void)viewDidUnload
+- (void)dealloc
 {
     self.buttonLoginLogout = nil;
     [super viewDidUnload];

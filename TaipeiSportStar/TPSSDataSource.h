@@ -26,6 +26,18 @@ extern NSString * const TPSSDataSourceDictKeySportID;
 
 extern NSString * const TPSSDataSourceDictKeyEventID;
 extern NSString * const TPSSDataSourceDictKeyEventSport;
+
+extern NSString * const TPSSDataSourceDictKeyWeatherImage;
+extern NSString * const TPSSDataSourceDictKeyWeatherImageHeight;
+extern NSString * const TPSSDataSourceDictKeyWeatherImageWidth;
+extern NSString * const TPSSDataSourceDictKeyWeatherImageUrl;
+extern NSString * const TPSSDataSourceDictKeyWeatherLocation;
+extern NSString * const TPSSDataSourceDictKeyWeatherImageTime;
+extern NSString * const TPSSDataSourceDictKeyWeatherCondition;
+extern NSString * const TPSSDataSourceDictKeyWeatherConditionCode;
+extern NSString * const TPSSDataSourceDictKeyWeatherConditionTemp;
+extern NSString * const TPSSDataSourceDictKeyWeatherConditionText;
+
 @interface TPSSDataSource : NSObject {
   // Cache data pool
   NSCache *cache;
@@ -44,5 +56,6 @@ extern NSString * const TPSSDataSourceDictKeyEventSport;
 - (NSArray *)arrayWithSportsByType:(NSString*) type;
 - (NSArray *)arrayWithStadiumsByEvent;
 - (NSArray *)arrayWithSportsByEvent;
+- (NSDictionary *) currentWeather;
 
 @end
