@@ -7,16 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TPSSStadiumDetailBaseViewController : UIViewController {
+#import "TPSSDataSource.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import <Social/Social.h>
+#import <Accounts/ACAccount.h>
+#import <Accounts/ACAccountStore.h>
+#import <Accounts/ACAccountType.h>
+@interface TPSSStadiumDetailBaseViewController : UIViewController <UINavigationBarDelegate> {
   NSDictionary *stadium;
 }
 @property (strong, nonatomic) IBOutlet UILabel *labelStadiumName;
 @property (strong, nonatomic) IBOutlet UILabel *labelOpenTime;
-@property (strong, nonatomic) IBOutlet UILabel *labelSports;
-@property (strong, nonatomic) IBOutlet UILabel *labelBusInfo;
 @property (strong, nonatomic) IBOutlet UIImageView *stadiumImage;
-@property (strong, nonatomic) IBOutlet UILabel *labelMRTInfo;
+@property (strong, nonatomic) IBOutlet UIButton *sportDetailButton;
+@property (strong, nonatomic) IBOutlet UIButton *trafficDetailButton;
+
+
+- (IBAction)detailButtonClicked:(id)sender;
 
 - (void)setWithStadiumDictionary:(NSDictionary *)stadiumDict;
 - (NSString*) sportsInStadium;

@@ -69,6 +69,7 @@
 		18CF5FC016823EAC007DA152 /* 23.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA816823EAC007DA152 /* 23.png */; };
 		18CF5FC3168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF5FC2168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m */; };
 		18CF5FC616824A42007DA152 /* TPSSMapBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF5FC516824A41007DA152 /* TPSSMapBaseViewController.m */; };
+		18CF5FC916826E74007DA152 /* TPSSDetailInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF5FC816826E74007DA152 /* TPSSDetailInformationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,8 @@
 		18CF5FC2168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSStadiumDetailBaseViewController.m; sourceTree = "<group>"; };
 		18CF5FC416824A41007DA152 /* TPSSMapBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSMapBaseViewController.h; sourceTree = "<group>"; };
 		18CF5FC516824A41007DA152 /* TPSSMapBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSMapBaseViewController.m; sourceTree = "<group>"; };
+		18CF5FC716826E74007DA152 /* TPSSDetailInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSDetailInformationViewController.h; sourceTree = "<group>"; };
+		18CF5FC816826E74007DA152 /* TPSSDetailInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSDetailInformationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +343,8 @@
 				189A970B167DBD5400F4765A /* TPSSStadiumDetailInJoinViewController.m */,
 				18CF5FC1168244EB007DA152 /* TPSSStadiumDetailBaseViewController.h */,
 				18CF5FC2168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m */,
+				18CF5FC716826E74007DA152 /* TPSSDetailInformationViewController.h */,
+				18CF5FC816826E74007DA152 /* TPSSDetailInformationViewController.m */,
 			);
 			name = "Stadium detail";
 			sourceTree = "<group>";
@@ -550,6 +555,7 @@
 				189A971E167F13A600F4765A /* TPSSSportListInJoinViewController.m in Sources */,
 				18CF5FC3168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m in Sources */,
 				18CF5FC616824A42007DA152 /* TPSSMapBaseViewController.m in Sources */,
+				18CF5FC916826E74007DA152 /* TPSSDetailInformationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

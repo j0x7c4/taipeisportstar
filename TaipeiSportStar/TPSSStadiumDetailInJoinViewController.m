@@ -7,8 +7,7 @@
 //
 
 #import "TPSSStadiumDetailInJoinViewController.h"
-#import "TPSSDataSource.h"
-#import <FacebookSDK/FacebookSDK.h>
+
 static NSString *CellIdentifier = @"Cell";
 @interface TPSSStadiumDetailInJoinViewController () {
   NSArray * events;

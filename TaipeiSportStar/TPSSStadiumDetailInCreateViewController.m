@@ -7,8 +7,7 @@
 //
 
 #import "TPSSStadiumDetailInCreateViewController.h"
-#import "TPSSDataSource.h"
-#import <FacebookSDK/FacebookSDK.h>
+
 
 @interface TPSSStadiumDetailInCreateViewController () {
   NSArray* sports;

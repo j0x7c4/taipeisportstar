@@ -179,19 +179,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5A-LY-CQH">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJR-4R-iM6">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="320" id="Z1T-Il-c3M"/>
+                                            <constraint firstAttribute="width" constant="285" id="hpE-bG-5Ag"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MRT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElN-6K-EaI">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -218,27 +208,58 @@
                                             <constraint firstItem="Qfa-6E-wL1" firstAttribute="trailing" secondItem="dmb-PO-X3V" secondAttribute="trailing" type="default" id="zkb-ic-l1U"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvZ-u7-rA3">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="detailButtonClicked:" destination="mM0-TQ-pZa" eventType="touchUpInside" id="kZO-qR-qqR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CM5-Qx-udI">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="detailButtonClicked:" destination="mM0-TQ-pZa" eventType="touchUpInside" id="y8f-HN-X3o"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Traffic Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-yW-0IR">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="bJR-4R-iM6" firstAttribute="leading" secondItem="Z6u-03-dQT" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0kD-DC-AY0"/>
+                                    <constraint firstItem="A5A-LY-CQH" firstAttribute="leading" secondItem="Z6u-03-dQT" secondAttribute="leading" constant="21" id="1AF-3J-jVl"/>
                                     <constraint firstItem="arZ-Jn-nf4" firstAttribute="centerX" secondItem="GdP-Wo-WYi" secondAttribute="centerX" type="default" id="4Ng-Yu-6ZZ"/>
                                     <constraint firstItem="arZ-Jn-nf4" firstAttribute="leading" secondItem="Z6u-03-dQT" secondAttribute="leading" type="default" id="5u4-uf-ErH"/>
                                     <constraint firstItem="dmb-PO-X3V" firstAttribute="top" secondItem="Z6u-03-dQT" secondAttribute="top" constant="413" id="6hR-ie-Roo"/>
+                                    <constraint firstItem="GdP-Wo-WYi" firstAttribute="centerX" secondItem="Z6u-03-dQT" secondAttribute="centerX" type="default" id="6nX-ND-sNR"/>
                                     <constraint firstItem="dmb-PO-X3V" firstAttribute="leading" secondItem="Z6u-03-dQT" secondAttribute="leading" type="default" id="9Gc-S3-Xac"/>
-                                    <constraint firstItem="GdP-Wo-WYi" firstAttribute="trailing" secondItem="A5A-LY-CQH" secondAttribute="trailing" type="default" id="BTl-IB-vVo"/>
-                                    <constraint firstItem="jTh-Hq-BNF" firstAttribute="leading" secondItem="ElN-6K-EaI" secondAttribute="leading" type="default" id="Chj-Ae-2q0"/>
-                                    <constraint firstItem="bJR-4R-iM6" firstAttribute="top" secondItem="Z6u-03-dQT" secondAttribute="top" constant="242" id="D7H-xC-Otp"/>
+                                    <constraint firstItem="CM5-Qx-udI" firstAttribute="top" secondItem="A5A-LY-CQH" secondAttribute="top" type="default" id="EOO-1m-BLl"/>
                                     <constraint firstAttribute="bottom" secondItem="dmb-PO-X3V" secondAttribute="bottom" constant="39" id="Hj8-g2-s9F"/>
                                     <constraint firstItem="arZ-Jn-nf4" firstAttribute="top" secondItem="Z6u-03-dQT" secondAttribute="top" type="default" id="Hvc-fG-6ky"/>
+                                    <constraint firstAttribute="trailing" secondItem="LvZ-u7-rA3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="K1i-vX-XUr"/>
                                     <constraint firstItem="arZ-Jn-nf4" firstAttribute="trailing" secondItem="Z6u-03-dQT" secondAttribute="trailing" type="default" id="LaB-QK-xgg"/>
-                                    <constraint firstItem="A5A-LY-CQH" firstAttribute="leading" secondItem="jTh-Hq-BNF" secondAttribute="leading" type="default" id="Nfd-TR-X1P"/>
-                                    <constraint firstItem="ElN-6K-EaI" firstAttribute="top" secondItem="Z6u-03-dQT" secondAttribute="top" constant="208" id="Ocd-nM-PRg"/>
-                                    <constraint firstItem="A5A-LY-CQH" firstAttribute="top" secondItem="Z6u-03-dQT" secondAttribute="top" constant="156" id="Wah-zJ-SF0"/>
-                                    <constraint firstItem="ElN-6K-EaI" firstAttribute="trailing" secondItem="jTh-Hq-BNF" secondAttribute="trailing" type="default" id="jQi-Li-n58"/>
+                                    <constraint firstItem="7zw-yW-0IR" firstAttribute="top" secondItem="Z6u-03-dQT" secondAttribute="top" constant="265" id="W6o-eu-sJ2"/>
+                                    <constraint firstItem="7zw-yW-0IR" firstAttribute="leading" secondItem="Z6u-03-dQT" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WSq-VR-fup"/>
+                                    <constraint firstItem="7zw-yW-0IR" firstAttribute="top" secondItem="LvZ-u7-rA3" secondAttribute="top" type="default" id="gJM-wt-nmy"/>
+                                    <constraint firstAttribute="trailing" secondItem="CM5-Qx-udI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hW3-DX-8FP"/>
                                     <constraint firstItem="jTh-Hq-BNF" firstAttribute="top" secondItem="Z6u-03-dQT" secondAttribute="top" constant="182" id="pwZ-0n-lY7"/>
-                                    <constraint firstItem="A5A-LY-CQH" firstAttribute="leading" secondItem="GdP-Wo-WYi" secondAttribute="leading" type="default" id="rPC-Si-WFY"/>
+                                    <constraint firstItem="jTh-Hq-BNF" firstAttribute="leading" secondItem="GdP-Wo-WYi" secondAttribute="leading" type="default" id="rhw-KB-BoE"/>
                                     <constraint firstItem="dmb-PO-X3V" firstAttribute="trailing" secondItem="Z6u-03-dQT" secondAttribute="trailing" type="default" id="rxl-oO-SQK"/>
-                                    <constraint firstItem="GdP-Wo-WYi" firstAttribute="centerX" secondItem="Z6u-03-dQT" secondAttribute="centerX" type="default" id="vLl-SQ-YDs"/>
+                                    <constraint firstItem="A5A-LY-CQH" firstAttribute="top" secondItem="Z6u-03-dQT" secondAttribute="top" constant="213" id="yVV-O6-vA3"/>
                                     <constraint firstItem="GdP-Wo-WYi" firstAttribute="top" secondItem="Z6u-03-dQT" secondAttribute="top" constant="128" id="zMX-hM-FqW"/>
                                 </constraints>
                             </scrollView>
@@ -253,18 +274,59 @@
                     </view>
                     <connections>
                         <outlet property="actionView" destination="dmb-PO-X3V" id="HhB-33-lEP"/>
-                        <outlet property="labelBusInfo" destination="bJR-4R-iM6" id="QnD-dQ-eWv"/>
-                        <outlet property="labelMRTInfo" destination="ElN-6K-EaI" id="fzK-gn-6Xh"/>
                         <outlet property="labelOpenTime" destination="jTh-Hq-BNF" id="nUu-15-GkW"/>
-                        <outlet property="labelSports" destination="A5A-LY-CQH" id="rRZ-nx-g5H"/>
                         <outlet property="labelStadiumName" destination="GdP-Wo-WYi" id="Wcj-zN-BwW"/>
+                        <outlet property="sportDetailButton" destination="CM5-Qx-udI" id="Ir2-0s-LPh"/>
                         <outlet property="stadiumImage" destination="arZ-Jn-nf4" id="HlW-i9-rUA"/>
                         <outlet property="tableViewSportList" destination="Qfa-6E-wL1" id="Hiu-1u-fWc"/>
+                        <outlet property="trafficDetailButton" destination="LvZ-u7-rA3" id="5G2-Nc-udK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S07-45-I5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2893" y="-760"/>
+            <point key="canvasLocation" x="2712" y="-708"/>
+        </scene>
+        <!--Detail Information View Controller-->
+        <scene sceneID="YAW-1R-p9Q">
+            <objects>
+                <viewController storyboardIdentifier="detailInformation" id="CZS-VJ-qu4" customClass="TPSSDetailInformationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bt8-kv-xxQ">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGc-pO-I06">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="269" id="THH-7z-qCn"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DpD-sD-eIz">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="75w-4D-a4R"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YGc-pO-I06" firstAttribute="leading" secondItem="bt8-kv-xxQ" secondAttribute="leading" type="default" id="9UJ-bo-oIa"/>
+                            <constraint firstItem="DpD-sD-eIz" firstAttribute="top" secondItem="bt8-kv-xxQ" secondAttribute="top" type="default" id="GHK-85-kc9"/>
+                            <constraint firstItem="YGc-pO-I06" firstAttribute="bottom" secondItem="bt8-kv-xxQ" secondAttribute="bottom" type="default" id="L5s-8T-ixk"/>
+                            <constraint firstItem="YGc-pO-I06" firstAttribute="trailing" secondItem="bt8-kv-xxQ" secondAttribute="trailing" type="default" id="NKf-mh-r07"/>
+                            <constraint firstItem="DpD-sD-eIz" firstAttribute="trailing" secondItem="bt8-kv-xxQ" secondAttribute="trailing" type="default" id="hlg-TN-ulJ"/>
+                            <constraint firstItem="DpD-sD-eIz" firstAttribute="leading" secondItem="bt8-kv-xxQ" secondAttribute="leading" type="default" id="qZf-0Y-NjH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerImage" destination="DpD-sD-eIz" id="3ph-Ry-8at"/>
+                        <outlet property="contentText" destination="YGc-pO-I06" id="g7r-wD-8DG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="is0-8k-sjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3066" y="-702"/>
         </scene>
         <!--Sport List In Create View Controller - 運動-->
         <scene sceneID="bYT-Md-Dof">
@@ -305,34 +367,6 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stadium name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1r-hj-sWM">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="aC2-XG-NQk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Open time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKS-CA-7CO">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg4-jf-5kD">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDK-BE-kwj">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MRT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdS-Rs-ID0">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mu-Dg-vpY">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="創建活動">
@@ -372,36 +406,83 @@
                                     <constraint firstAttribute="height" constant="128" id="veg-CI-513"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stadium name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUg-3q-l4e">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="0ee-Rk-0Gh"/>
+                                    <constraint firstAttribute="height" constant="25" id="Dsz-mn-7o2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Open time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27l-mQ-Usc">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="MDS-LS-qU2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hop-qK-Qrw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="ur9-bA-6XC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJM-jj-fJi">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oss-zd-sKB">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Traffic Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfr-bl-BYI">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CKS-CA-7CO" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Y0-UC-wG7"/>
                             <constraint firstAttribute="trailing" secondItem="jpF-jE-Qor" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7QD-zs-C7J"/>
                             <constraint firstAttribute="bottom" secondItem="jpF-jE-Qor" secondAttribute="bottom" constant="45" id="CoS-Dx-W1m"/>
-                            <constraint firstItem="FdS-Rs-ID0" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DyQ-Rn-d9S"/>
+                            <constraint firstItem="nUg-3q-l4e" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EId-Ld-nnX"/>
                             <constraint firstAttribute="bottom" secondItem="CpB-iH-qXa" secondAttribute="bottom" constant="132" id="GyL-Wg-9cl"/>
-                            <constraint firstItem="T1r-hj-sWM" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="134" id="ILr-Xb-PCe"/>
                             <constraint firstAttribute="trailing" secondItem="CpB-iH-qXa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="JKr-Tp-ohw"/>
                             <constraint firstItem="jpF-jE-Qor" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MyT-C0-IWa"/>
+                            <constraint firstAttribute="bottom" secondItem="yJM-jj-fJi" secondAttribute="bottom" constant="165" id="NqX-iL-eur"/>
                             <constraint firstAttribute="trailing" secondItem="K81-9a-5Oa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Oej-J4-fX3"/>
-                            <constraint firstAttribute="trailing" secondItem="hDK-BE-kwj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PTY-UW-xSv"/>
                             <constraint firstItem="CpB-iH-qXa" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QU1-1O-8WB"/>
-                            <constraint firstAttribute="trailing" secondItem="hg4-jf-5kD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Rrb-lN-GWi"/>
-                            <constraint firstItem="CKS-CA-7CO" firstAttribute="top" secondItem="T1r-hj-sWM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VIL-6J-avm"/>
-                            <constraint firstItem="hg4-jf-5kD" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="W93-w2-djC"/>
-                            <constraint firstItem="hDK-BE-kwj" firstAttribute="top" secondItem="hg4-jf-5kD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Woz-Nj-lAT"/>
+                            <constraint firstItem="Hop-qK-Qrw" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="23" id="Qky-e0-L1T"/>
                             <constraint firstItem="5mu-Dg-vpY" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="433" id="Y4T-1j-FSV"/>
-                            <constraint firstAttribute="trailing" secondItem="FdS-Rs-ID0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="a4o-Kt-ACc"/>
-                            <constraint firstItem="T1r-hj-sWM" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cMD-jk-hm4"/>
-                            <constraint firstItem="hDK-BE-kwj" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cig-9T-4ix"/>
+                            <constraint firstItem="Hop-qK-Qrw" firstAttribute="centerY" secondItem="lBK-xE-S1f" secondAttribute="centerY" type="default" id="b14-KN-rpB"/>
+                            <constraint firstItem="27l-mQ-Usc" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bpq-RX-Vh5"/>
+                            <constraint firstItem="Pfr-bl-BYI" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="22" id="dVk-xT-fEB"/>
+                            <constraint firstItem="Hop-qK-Qrw" firstAttribute="top" secondItem="Oss-zd-sKB" secondAttribute="top" type="default" id="eBa-U9-dmQ"/>
+                            <constraint firstItem="27l-mQ-Usc" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="189" id="eQy-WC-Xzj"/>
                             <constraint firstItem="SN3-ax-HfQ" firstAttribute="trailing" secondItem="lBK-xE-S1f" secondAttribute="trailing" type="default" id="eU9-ST-m6k"/>
                             <constraint firstItem="SN3-ax-HfQ" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" type="default" id="eXC-dZ-87b"/>
-                            <constraint firstAttribute="trailing" secondItem="CKS-CA-7CO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="epz-ia-gyr"/>
                             <constraint firstAttribute="centerX" secondItem="5mu-Dg-vpY" secondAttribute="centerX" type="user" id="ier-sr-9gP"/>
-                            <constraint firstItem="hg4-jf-5kD" firstAttribute="top" secondItem="CKS-CA-7CO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lxa-ak-G7U"/>
-                            <constraint firstAttribute="trailing" secondItem="T1r-hj-sWM" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="n4I-sb-ni3"/>
+                            <constraint firstItem="Oss-zd-sKB" firstAttribute="leading" secondItem="yJM-jj-fJi" secondAttribute="leading" type="default" id="oDQ-ze-Il8"/>
+                            <constraint firstItem="yJM-jj-fJi" firstAttribute="top" secondItem="Pfr-bl-BYI" secondAttribute="top" type="default" id="oc1-bo-KUJ"/>
+                            <constraint firstItem="nUg-3q-l4e" firstAttribute="top" secondItem="lBK-xE-S1f" secondAttribute="top" constant="135" id="pNq-ju-wkh"/>
+                            <constraint firstAttribute="trailing" secondItem="Oss-zd-sKB" secondAttribute="trailing" constant="18" id="r3e-SL-60L"/>
                             <constraint firstItem="SN3-ax-HfQ" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" type="default" id="tNV-5T-eUC"/>
-                            <constraint firstItem="FdS-Rs-ID0" firstAttribute="top" secondItem="hDK-BE-kwj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wWd-gS-84Y"/>
                             <constraint firstAttribute="bottom" secondItem="K81-9a-5Oa" secondAttribute="bottom" constant="88" id="xbY-kg-Cvv"/>
                             <constraint firstItem="K81-9a-5Oa" firstAttribute="leading" secondItem="lBK-xE-S1f" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zP2-lg-j6V"/>
                         </constraints>
@@ -409,14 +490,13 @@
                     <connections>
                         <outlet property="buttonCreateEvent" destination="5mu-Dg-vpY" id="gtV-xy-ocG"/>
                         <outlet property="eventDescription" destination="jpF-jE-Qor" id="S5U-pr-77g"/>
-                        <outlet property="labelBusInfo" destination="hDK-BE-kwj" id="2hb-kU-xCV"/>
-                        <outlet property="labelMRTInfo" destination="FdS-Rs-ID0" id="nnN-5u-Lo0"/>
-                        <outlet property="labelOpenTime" destination="CKS-CA-7CO" id="4CQ-c3-U59"/>
-                        <outlet property="labelSports" destination="hg4-jf-5kD" id="iWo-AU-WlH"/>
-                        <outlet property="labelStadiumName" destination="T1r-hj-sWM" id="5KG-Qa-04n"/>
+                        <outlet property="labelOpenTime" destination="27l-mQ-Usc" id="xra-87-cQY"/>
+                        <outlet property="labelStadiumName" destination="nUg-3q-l4e" id="BVz-GD-mYM"/>
                         <outlet property="selectedSportTextField" destination="CpB-iH-qXa" id="SM6-CH-qhZ"/>
                         <outlet property="selectedTimeTextField" destination="K81-9a-5Oa" id="Aq6-7l-Kk1"/>
+                        <outlet property="sportDetailButton" destination="Oss-zd-sKB" id="ySU-cd-uW3"/>
                         <outlet property="stadiumImage" destination="SN3-ax-HfQ" id="cTw-V8-hdN"/>
+                        <outlet property="trafficDetailButton" destination="yJM-jj-fJi" id="yYn-9Y-g3p"/>
                         <outlet property="view" destination="lBK-xE-S1f" id="Aqa-qW-nyt"/>
                     </connections>
                 </viewController>
@@ -589,6 +669,14 @@
         <class className="TPSSCreateSelectionMapViewController" superclassName="TPSSMapBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSCreateSelectionMapViewController.h"/>
         </class>
+        <class className="TPSSDetailInformationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSDetailInformationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bannerImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="contentText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="TPSSHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSHomeViewController.h"/>
             <relationships>
@@ -617,12 +705,12 @@
         <class className="TPSSStadiumDetailBaseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailBaseViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="labelBusInfo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelMRTInfo" candidateClass="UILabel"/>
+                <relationship kind="action" name="detailButtonClicked:"/>
                 <relationship kind="outlet" name="labelOpenTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelSports" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelStadiumName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sportDetailButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="stadiumImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="trafficDetailButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="TPSSStadiumDetailInCreateViewController" superclassName="TPSSStadiumDetailBaseViewController">
