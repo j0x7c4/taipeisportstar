@@ -42,6 +42,33 @@
 		189A971E167F13A600F4765A /* TPSSSportListInJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A971D167F13A600F4765A /* TPSSSportListInJoinViewController.m */; };
 		18CBE7AE16797F480060F206 /* TPSSMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE7AD16797F480060F206 /* TPSSMapAnnotation.m */; };
 		18CBE7B4167982100060F206 /* TPSSSportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE7B3167982100060F206 /* TPSSSportListViewController.m */; };
+		18CF5F5E16823588007DA152 /* stadiums.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F5D16823588007DA152 /* stadiums.plist */; };
+		18CF5FA916823EAC007DA152 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9116823EAC007DA152 /* 0.png */; };
+		18CF5FAA16823EAC007DA152 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9216823EAC007DA152 /* 1.png */; };
+		18CF5FAB16823EAC007DA152 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9316823EAC007DA152 /* 2.png */; };
+		18CF5FAC16823EAC007DA152 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9416823EAC007DA152 /* 3.png */; };
+		18CF5FAD16823EAC007DA152 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9516823EAC007DA152 /* 4.png */; };
+		18CF5FAE16823EAC007DA152 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9616823EAC007DA152 /* 5.png */; };
+		18CF5FAF16823EAC007DA152 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9716823EAC007DA152 /* 6.png */; };
+		18CF5FB016823EAC007DA152 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9816823EAC007DA152 /* 7.png */; };
+		18CF5FB116823EAC007DA152 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9916823EAC007DA152 /* 8.png */; };
+		18CF5FB216823EAC007DA152 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9A16823EAC007DA152 /* 9.png */; };
+		18CF5FB316823EAC007DA152 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9B16823EAC007DA152 /* 10.png */; };
+		18CF5FB416823EAC007DA152 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9C16823EAC007DA152 /* 11.png */; };
+		18CF5FB516823EAC007DA152 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9D16823EAC007DA152 /* 12.png */; };
+		18CF5FB616823EAC007DA152 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9E16823EAC007DA152 /* 13.png */; };
+		18CF5FB716823EAC007DA152 /* 14.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5F9F16823EAC007DA152 /* 14.png */; };
+		18CF5FB816823EAC007DA152 /* 15.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA016823EAC007DA152 /* 15.png */; };
+		18CF5FB916823EAC007DA152 /* 16.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA116823EAC007DA152 /* 16.png */; };
+		18CF5FBA16823EAC007DA152 /* 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA216823EAC007DA152 /* 17.png */; };
+		18CF5FBB16823EAC007DA152 /* 18.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA316823EAC007DA152 /* 18.png */; };
+		18CF5FBC16823EAC007DA152 /* 19.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA416823EAC007DA152 /* 19.png */; };
+		18CF5FBD16823EAC007DA152 /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA516823EAC007DA152 /* 20.png */; };
+		18CF5FBE16823EAC007DA152 /* 21.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA616823EAC007DA152 /* 21.png */; };
+		18CF5FBF16823EAC007DA152 /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA716823EAC007DA152 /* 22.png */; };
+		18CF5FC016823EAC007DA152 /* 23.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF5FA816823EAC007DA152 /* 23.png */; };
+		18CF5FC3168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF5FC2168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m */; };
+		18CF5FC616824A42007DA152 /* TPSSMapBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF5FC516824A41007DA152 /* TPSSMapBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +135,35 @@
 		18CBE7AD16797F480060F206 /* TPSSMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSMapAnnotation.m; sourceTree = "<group>"; };
 		18CBE7B2167982100060F206 /* TPSSSportListInCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSSportListInCreateViewController.h; sourceTree = "<group>"; };
 		18CBE7B3167982100060F206 /* TPSSSportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSSportListViewController.m; sourceTree = "<group>"; };
+		18CF5F5D16823588007DA152 /* stadiums.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = stadiums.plist; path = stadium_img/stadiums.plist; sourceTree = "<group>"; };
+		18CF5F9116823EAC007DA152 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 0.png; path = stadium_img/0.png; sourceTree = "<group>"; };
+		18CF5F9216823EAC007DA152 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = stadium_img/1.png; sourceTree = "<group>"; };
+		18CF5F9316823EAC007DA152 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = stadium_img/2.png; sourceTree = "<group>"; };
+		18CF5F9416823EAC007DA152 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = stadium_img/3.png; sourceTree = "<group>"; };
+		18CF5F9516823EAC007DA152 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = stadium_img/4.png; sourceTree = "<group>"; };
+		18CF5F9616823EAC007DA152 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = stadium_img/5.png; sourceTree = "<group>"; };
+		18CF5F9716823EAC007DA152 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6.png; path = stadium_img/6.png; sourceTree = "<group>"; };
+		18CF5F9816823EAC007DA152 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 7.png; path = stadium_img/7.png; sourceTree = "<group>"; };
+		18CF5F9916823EAC007DA152 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8.png; path = stadium_img/8.png; sourceTree = "<group>"; };
+		18CF5F9A16823EAC007DA152 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9.png; path = stadium_img/9.png; sourceTree = "<group>"; };
+		18CF5F9B16823EAC007DA152 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 10.png; path = stadium_img/10.png; sourceTree = "<group>"; };
+		18CF5F9C16823EAC007DA152 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11.png; path = stadium_img/11.png; sourceTree = "<group>"; };
+		18CF5F9D16823EAC007DA152 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12.png; path = stadium_img/12.png; sourceTree = "<group>"; };
+		18CF5F9E16823EAC007DA152 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 13.png; path = stadium_img/13.png; sourceTree = "<group>"; };
+		18CF5F9F16823EAC007DA152 /* 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 14.png; path = stadium_img/14.png; sourceTree = "<group>"; };
+		18CF5FA016823EAC007DA152 /* 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 15.png; path = stadium_img/15.png; sourceTree = "<group>"; };
+		18CF5FA116823EAC007DA152 /* 16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 16.png; path = stadium_img/16.png; sourceTree = "<group>"; };
+		18CF5FA216823EAC007DA152 /* 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 17.png; path = stadium_img/17.png; sourceTree = "<group>"; };
+		18CF5FA316823EAC007DA152 /* 18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 18.png; path = stadium_img/18.png; sourceTree = "<group>"; };
+		18CF5FA416823EAC007DA152 /* 19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 19.png; path = stadium_img/19.png; sourceTree = "<group>"; };
+		18CF5FA516823EAC007DA152 /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 20.png; path = stadium_img/20.png; sourceTree = "<group>"; };
+		18CF5FA616823EAC007DA152 /* 21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 21.png; path = stadium_img/21.png; sourceTree = "<group>"; };
+		18CF5FA716823EAC007DA152 /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 22.png; path = stadium_img/22.png; sourceTree = "<group>"; };
+		18CF5FA816823EAC007DA152 /* 23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 23.png; path = stadium_img/23.png; sourceTree = "<group>"; };
+		18CF5FC1168244EB007DA152 /* TPSSStadiumDetailBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSStadiumDetailBaseViewController.h; sourceTree = "<group>"; };
+		18CF5FC2168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSStadiumDetailBaseViewController.m; sourceTree = "<group>"; };
+		18CF5FC416824A41007DA152 /* TPSSMapBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSMapBaseViewController.h; sourceTree = "<group>"; };
+		18CF5FC516824A41007DA152 /* TPSSMapBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSMapBaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +237,7 @@
 		18452CB7166F81F900ED5480 /* TaipeiSportStar */ = {
 			isa = PBXGroup;
 			children = (
+				18CF5F9016823E99007DA152 /* images */,
 				189A9711167DC85900F4765A /* Stadium list */,
 				189A9706167DBCE400F4765A /* Stadium detail */,
 				18CBE7B0167981CA0060F206 /* Sports list */,
@@ -240,6 +297,8 @@
 				18452CFD166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m */,
 				18CBE7AC16797F480060F206 /* TPSSMapAnnotation.h */,
 				18CBE7AD16797F480060F206 /* TPSSMapAnnotation.m */,
+				18CF5FC416824A41007DA152 /* TPSSMapBaseViewController.h */,
+				18CF5FC516824A41007DA152 /* TPSSMapBaseViewController.m */,
 			);
 			name = MapView;
 			sourceTree = "<group>";
@@ -247,6 +306,7 @@
 		18811C6D16771681001FCD45 /* Data source */ = {
 			isa = PBXGroup;
 			children = (
+				18CF5F5D16823588007DA152 /* stadiums.plist */,
 				18811C6F167716BC001FCD45 /* TPSSDataSource.h */,
 				18811C70167716BC001FCD45 /* TPSSDataSource.m */,
 			);
@@ -278,6 +338,8 @@
 				189A9708167DBD3C00F4765A /* TPSSStadiumDetailInCreateViewController.m */,
 				189A970A167DBD5400F4765A /* TPSSStadiumDetailInJoinViewController.h */,
 				189A970B167DBD5400F4765A /* TPSSStadiumDetailInJoinViewController.m */,
+				18CF5FC1168244EB007DA152 /* TPSSStadiumDetailBaseViewController.h */,
+				18CF5FC2168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m */,
 			);
 			name = "Stadium detail";
 			sourceTree = "<group>";
@@ -302,6 +364,37 @@
 				189A971D167F13A600F4765A /* TPSSSportListInJoinViewController.m */,
 			);
 			name = "Sports list";
+			sourceTree = "<group>";
+		};
+		18CF5F9016823E99007DA152 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				18CF5F9116823EAC007DA152 /* 0.png */,
+				18CF5F9216823EAC007DA152 /* 1.png */,
+				18CF5F9316823EAC007DA152 /* 2.png */,
+				18CF5F9416823EAC007DA152 /* 3.png */,
+				18CF5F9516823EAC007DA152 /* 4.png */,
+				18CF5F9616823EAC007DA152 /* 5.png */,
+				18CF5F9716823EAC007DA152 /* 6.png */,
+				18CF5F9816823EAC007DA152 /* 7.png */,
+				18CF5F9916823EAC007DA152 /* 8.png */,
+				18CF5F9A16823EAC007DA152 /* 9.png */,
+				18CF5F9B16823EAC007DA152 /* 10.png */,
+				18CF5F9C16823EAC007DA152 /* 11.png */,
+				18CF5F9D16823EAC007DA152 /* 12.png */,
+				18CF5F9E16823EAC007DA152 /* 13.png */,
+				18CF5F9F16823EAC007DA152 /* 14.png */,
+				18CF5FA016823EAC007DA152 /* 15.png */,
+				18CF5FA116823EAC007DA152 /* 16.png */,
+				18CF5FA216823EAC007DA152 /* 17.png */,
+				18CF5FA316823EAC007DA152 /* 18.png */,
+				18CF5FA416823EAC007DA152 /* 19.png */,
+				18CF5FA516823EAC007DA152 /* 20.png */,
+				18CF5FA616823EAC007DA152 /* 21.png */,
+				18CF5FA716823EAC007DA152 /* 22.png */,
+				18CF5FA816823EAC007DA152 /* 23.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +474,31 @@
 				18452CC6166F81F900ED5480 /* Default@2x.png in Resources */,
 				18452CC8166F81F900ED5480 /* Default-568h@2x.png in Resources */,
 				18452CCB166F81F900ED5480 /* MainStoryboard.storyboard in Resources */,
+				18CF5F5E16823588007DA152 /* stadiums.plist in Resources */,
+				18CF5FA916823EAC007DA152 /* 0.png in Resources */,
+				18CF5FAA16823EAC007DA152 /* 1.png in Resources */,
+				18CF5FAB16823EAC007DA152 /* 2.png in Resources */,
+				18CF5FAC16823EAC007DA152 /* 3.png in Resources */,
+				18CF5FAD16823EAC007DA152 /* 4.png in Resources */,
+				18CF5FAE16823EAC007DA152 /* 5.png in Resources */,
+				18CF5FAF16823EAC007DA152 /* 6.png in Resources */,
+				18CF5FB016823EAC007DA152 /* 7.png in Resources */,
+				18CF5FB116823EAC007DA152 /* 8.png in Resources */,
+				18CF5FB216823EAC007DA152 /* 9.png in Resources */,
+				18CF5FB316823EAC007DA152 /* 10.png in Resources */,
+				18CF5FB416823EAC007DA152 /* 11.png in Resources */,
+				18CF5FB516823EAC007DA152 /* 12.png in Resources */,
+				18CF5FB616823EAC007DA152 /* 13.png in Resources */,
+				18CF5FB716823EAC007DA152 /* 14.png in Resources */,
+				18CF5FB816823EAC007DA152 /* 15.png in Resources */,
+				18CF5FB916823EAC007DA152 /* 16.png in Resources */,
+				18CF5FBA16823EAC007DA152 /* 17.png in Resources */,
+				18CF5FBB16823EAC007DA152 /* 18.png in Resources */,
+				18CF5FBC16823EAC007DA152 /* 19.png in Resources */,
+				18CF5FBD16823EAC007DA152 /* 20.png in Resources */,
+				18CF5FBE16823EAC007DA152 /* 21.png in Resources */,
+				18CF5FBF16823EAC007DA152 /* 22.png in Resources */,
+				18CF5FC016823EAC007DA152 /* 23.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +548,8 @@
 				189A9714167DC89200F4765A /* TPSSStadiumListInCreateViewController.m in Sources */,
 				189A9717167DC8AA00F4765A /* TPSSStadiumListInJoinViewController.m in Sources */,
 				189A971E167F13A600F4765A /* TPSSSportListInJoinViewController.m in Sources */,
+				18CF5FC3168244EB007DA152 /* TPSSStadiumDetailBaseViewController.m in Sources */,
+				18CF5FC616824A42007DA152 /* TPSSMapBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

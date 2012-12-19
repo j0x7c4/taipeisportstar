@@ -13,6 +13,7 @@
 static NSString *TPSSDataSourceCacheKeyAllStadiums = @"TPSSDataSource.Cache.AllStadiums";
 static NSString *TPSSDataSourceCacheKeyAllSports = @"TPSSDataSource.Cache.AllSports";
 static NSString *TPSSDataSourceCacheKeyStadiumWithID = @"TPSSDataSource.Cache.Stadium.ID.%@";
+static NSString *TPSSDataSourceCacheKeyStadiumImageWithID = @"TPSSDataSource.Cache.Stadium.Image.ID.%@";
 static NSString *TPSSDataSourceCacheKeySportWithID = @"TPSSDataSource.Cache.Sport.%@";
 static NSString *TPSSDataSourceCacheKeyStadiumWithSport = @"TPSSDataSource.Cache.Stadium.Sport.%@";
 static NSString *TPSSDataSourceCacheKeyStadiumWithType = @"TPSSDataSource.Cache.Stadium.Type.%@";
@@ -71,11 +72,19 @@ NSString * const TPSSDataSourceDictKeyWeatherImageTime = @"time";
   NSLog(@"%d",response.statusCode);
   return response.statusCode == 200;
 }
+
+- (id) init {
+  if ( self=[super init] ) {
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"stadium_img/stadiums" ofType:@"plist"];
+    //stadiumImageList = [NSArray arrayWithContentsOfFile:path];
+    cache = [[NSCache alloc] init];
+  }
+  return self;
+}
 - (void)refresh {
-  
+  //NSString *path = [[NSBundle mainBundle] pathForResource:@"stadium_img/stadiums" ofType:@"plist"];
+  //stadiumImageList = [NSArray arrayWithContentsOfFile:path];
   [self cleanCache];
-  
-  
 }
 - (void)cleanCache {
   
@@ -83,12 +92,12 @@ NSString * const TPSSDataSourceDictKeyWeatherImageTime = @"time";
   
   
 }
+
 - (NSDictionary *) stadiumWithID:(NSString *) ID {
   
   NSString *cacheKey = [NSString stringWithFormat:TPSSDataSourceCacheKeyStadiumWithID,ID];
   NSDictionary *resultStadium = [cache objectForKey:cacheKey];
   if ( !resultStadium ) {
-    
     NSString *firstString = @"http://taipeisportstar.appspot.com/api/stadiums/id/";
     NSString *secondString = ID;
     NSString *concatinatedString = [firstString stringByAppendingString:secondString];

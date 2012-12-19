@@ -12,15 +12,10 @@
 static NSString *CellIdentifier = @"Cell";
 @interface TPSSStadiumDetailInJoinViewController () {
   NSArray * events;
-  NSDictionary *stadium;
   NSString* selectedEventId;
 }
-@property (strong, nonatomic) IBOutlet UILabel *labelStadiumName;
-@property (strong, nonatomic) IBOutlet UILabel *labelOpenTime;
-@property (strong, nonatomic) IBOutlet UILabel *labelSport;
-@property (strong, nonatomic) IBOutlet UILabel *busInfoText;
-@property (strong, nonatomic) IBOutlet UILabel *MRTInfoText;
 @property (strong, nonatomic) IBOutlet UIView *actionView;
+@property (strong, nonatomic) IBOutlet UIImageView *stadiumImage;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewSportList;
 @end
 
@@ -50,14 +45,6 @@ static NSString *CellIdentifier = @"Cell";
 
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 - (void)setSelectedEventId:(NSString*)eventId {
   selectedEventId = eventId;
 }
@@ -79,11 +66,6 @@ static NSString *CellIdentifier = @"Cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  NSLog(@"%@",stadium);
-    self.title = self.labelStadiumName.text = stadium[TPSSDataSourceDictKeyStadiumName];
-    self.busInfoText.text = [[NSString alloc]initWithFormat:@"公車路線:%@",stadium[TPSSDataSourceDictKeyStadiumBus]];
-    self.MRTInfoText.text = [[NSString alloc]initWithFormat:@"捷運路線:%@",stadium[TPSSDataSourceDictKeyStadiumMrt]];
-    self.labelOpenTime.text = stadium[TPSSDataSourceDictKeyStadiumTime];
   if ( selectedEventId ) {
     UIButton* joinButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     joinButton.frame = CGRectMake(0, 0, 200, 44);

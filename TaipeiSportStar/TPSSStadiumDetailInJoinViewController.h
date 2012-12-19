@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TPSSStadiumDetailInJoinViewController : UIViewController <UITableViewDataSource,
+#import "TPSSStadiumDetailBaseViewController.h"
+@interface TPSSStadiumDetailInJoinViewController : TPSSStadiumDetailBaseViewController <UITableViewDataSource,
                                                                      UITableViewDelegate, UIAlertViewDelegate>
 
-- (void)setWithStadiumDictionary:(NSDictionary *)stadiumDict;
 - (void)setSelectedEventId:(NSString*)eventId;
 @end

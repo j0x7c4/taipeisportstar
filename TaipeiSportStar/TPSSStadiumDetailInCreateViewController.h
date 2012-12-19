@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TPSSStadiumDetailBaseViewController.h"
 
-@interface TPSSStadiumDetailInCreateViewController : UIViewController <
+@interface TPSSStadiumDetailInCreateViewController : TPSSStadiumDetailBaseViewController <
 UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
-- (void)setWithStadiumDictionary:(NSDictionary *)stadiumDict;
+
 - (void)setSelectedSport:(NSDictionary*)sport;
 @end

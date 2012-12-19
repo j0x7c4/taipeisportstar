@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
-#import <Mapkit/MKAnnotation.h>
-#import <CoreLocation/CoreLocation.h>
+#import "TPSSMapBaseViewController.h"
 
-@interface TPSSJoinSelectionMapViewController : UIViewController <MKMapViewDelegate>
+@interface TPSSJoinSelectionMapViewController : TPSSMapBaseViewController
 
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
 
 @end

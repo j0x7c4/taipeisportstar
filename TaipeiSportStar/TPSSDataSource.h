@@ -41,6 +41,7 @@ extern NSString * const TPSSDataSourceDictKeyWeatherConditionText;
 @interface TPSSDataSource : NSObject {
   // Cache data pool
   NSCache *cache;
+  NSArray *stadiumImageList;
 }
 
 
