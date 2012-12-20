@@ -31,7 +31,7 @@
     [super viewDidLoad];
   self.stadiumImage.image = [UIImage imageNamed:[[NSString alloc] initWithFormat:@"%@.png",stadium[TPSSDataSourceDictKeyStadiumID]]];
   self.title = self.labelStadiumName.text = stadium[TPSSDataSourceDictKeyStadiumName];
-  self.labelOpenTime.text = stadium[TPSSDataSourceDictKeyStadiumTime];
+    self.labelOpenTime.text = stadium[TPSSDataSourceDictKeyStadiumTime];
 	UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
   
   self.navigationItem.rightBarButtonItem = shareButton;

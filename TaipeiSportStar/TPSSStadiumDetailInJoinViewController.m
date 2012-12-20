@@ -109,7 +109,7 @@ static NSString *CellIdentifier = @"Cell";
   }
   NSUInteger row = indexPath.row;
   cell.textLabel.text = events[row][TPSSDataSourceDictKeyEventSport];
-  cell.detailTextLabel.text = @"創建者 參加人數";
+  cell.detailTextLabel.text = @"";
   
   return cell;
 }

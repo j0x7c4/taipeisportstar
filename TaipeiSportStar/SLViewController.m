@@ -4,7 +4,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *    http://www.apache.org/licenses/LICENSE-2.0
  
  * Unless required by applicable law or agreed to in writing, software
@@ -18,7 +18,7 @@
 #import "TPSSAppDelegate.h"
 #import "TPSSHomeViewController.h"
 
-@interface SLViewController () 
+@interface SLViewController ()
 
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonLoginLogout;
@@ -31,16 +31,16 @@
 @implementation SLViewController
 @synthesize buttonLoginLogout = _buttonLoginLogout;
 
-- (void)viewDidLoad {    
+- (void)viewDidLoad {
     [super viewDidLoad];
-  
+    
 	// Do any additional setup after loading the view, typically from a nib.
-  [[NSNotificationCenter defaultCenter]
-   addObserver:self
-   selector:@selector(sessionStateChanged:)
-   name:FBSessionStateChangedNotification
-   object:nil];
-  
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(sessionStateChanged:)
+     name:FBSessionStateChangedNotification
+     object:nil];
+    
 }
 
 // FBSample logic
@@ -58,14 +58,14 @@
         [appDelegate closeSession];
         
     } else {
-      // The user has initiated a login, so call the openSession method
-      // and show the login UX if necessary.
-      
-      [appDelegate openSessionWithAllowLoginUI:YES];
-      UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-      TPSSHomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeViewController"];
-      [self.navigationController pushViewController:homeViewController animated:YES];
-      
+        // The user has initiated a login, so call the openSession method
+        // and show the login UX if necessary.
+        
+        [appDelegate openSessionWithAllowLoginUI:YES];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        TPSSHomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeViewController"];
+        [self.navigationController pushViewController:homeViewController animated:YES];
+        
     }
     
 }
@@ -89,18 +89,18 @@
 }
 
 - (void)didReceiveMemoryWarning {
-  [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
 
 - (void)sessionStateChanged:(NSNotification*)notification {
-  //NSLog(@"%@",notification);
-  if (FBSession.activeSession.isOpen) {
-    [self.buttonLoginLogout setTitle:@"登出" forState:UIControlStateNormal];
-  } else {
-    [self.buttonLoginLogout setTitle:@"登錄" forState:UIControlStateNormal];
-  }
+    //NSLog(@"%@",notification);
+    if (FBSession.activeSession.isOpen) {
+        [self.buttonLoginLogout setTitle:@"登出" forState:UIControlStateNormal];
+    } else {
+        [self.buttonLoginLogout setTitle:@"登錄" forState:UIControlStateNormal];
+    }
 }
 #pragma mark -
 

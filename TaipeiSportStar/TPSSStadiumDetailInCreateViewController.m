@@ -100,6 +100,7 @@
     [super viewDidLoad];
 
   sports = [stadium[TPSSDataSourceDictKeyStadiumSports] allValues];
+    self.buttonCreateEvent.titleLabel.text = @"創建活動";
   if ( selectedSport ) {
     self.selectedSportTextField.text = selectedSport[TPSSDataSourceDictKeySportName];
     
