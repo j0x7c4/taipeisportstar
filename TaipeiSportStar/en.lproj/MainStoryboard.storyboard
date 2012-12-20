@@ -849,7 +849,6 @@
         <class className="TPSSStadiumDetailInCreateViewController" superclassName="TPSSStadiumDetailBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailInCreateViewController.h"/>
             <relationships>
-                <relationship kind="action" name="createEvent:"/>
                 <relationship kind="outlet" name="buttonCreateEvent" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="eventDescription" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="selectedSportTextField" candidateClass="UITextField"/>
@@ -859,7 +858,6 @@
         <class className="TPSSStadiumDetailInJoinViewController" superclassName="TPSSStadiumDetailBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailInJoinViewController.h"/>
             <relationships>
-                <relationship kind="action" name="joinButtonClicked:"/>
                 <relationship kind="outlet" name="actionView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="stadiumImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="tableViewSportList" candidateClass="UITableView"/>

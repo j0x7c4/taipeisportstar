@@ -85,6 +85,7 @@
 		18452CEF166F90F500ED5480 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18452CEE166F90F400ED5480 /* CoreLocation.framework */; };
 		18452CF7166F954700ED5480 /* TPSSJoinSelectionMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18452CF6166F954700ED5480 /* TPSSJoinSelectionMapViewController.m */; };
 		18452CFE166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18452CFD166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m */; };
+		187F847D16829B25001FF6DC /* icon_v7.png in Resources */ = {isa = PBXBuildFile; fileRef = 187F847C16829B25001FF6DC /* icon_v7.png */; };
 		18811C71167716BC001FCD45 /* TPSSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 18811C70167716BC001FCD45 /* TPSSDataSource.m */; };
 		18811C791677209B001FCD45 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 18811C781677209B001FCD45 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18914402166FE3860060A8B0 /* SLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18914400166FE3860060A8B0 /* SLViewController.m */; };
@@ -198,6 +199,7 @@
 		18452CF6166F954700ED5480 /* TPSSJoinSelectionMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSJoinSelectionMapViewController.m; sourceTree = "<group>"; };
 		18452CFC166FC76000ED5480 /* TPSSCreateSelectionMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSCreateSelectionMapViewController.h; sourceTree = "<group>"; };
 		18452CFD166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSCreateSelectionMapViewController.m; sourceTree = "<group>"; };
+		187F847C16829B25001FF6DC /* icon_v7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_v7.png; sourceTree = "<group>"; };
 		18811C6F167716BC001FCD45 /* TPSSDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSDataSource.h; sourceTree = "<group>"; };
 		18811C70167716BC001FCD45 /* TPSSDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSDataSource.m; sourceTree = "<group>"; };
 		18811C771677209B001FCD45 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = Lib/JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
@@ -285,6 +287,7 @@
 		18452CA2166F81F900ED5480 = {
 			isa = PBXGroup;
 			children = (
+				187F847C16829B25001FF6DC /* icon_v7.png */,
 				180C732516707CB000C445CA /* libsqlite3.dylib */,
 				18452CB7166F81F900ED5480 /* TaipeiSportStar */,
 				18452CDB166F81FA00ED5480 /* TaipeiSportStarTests */,
@@ -605,6 +608,7 @@
 				05E3921C16826DA000F21DCF /* BG4.png in Resources */,
 				05E392221682751F00F21DCF /* BG5.png in Resources */,
 				05E392241682763000F21DCF /* bt_2.png in Resources */,
+				187F847D16829B25001FF6DC /* icon_v7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
