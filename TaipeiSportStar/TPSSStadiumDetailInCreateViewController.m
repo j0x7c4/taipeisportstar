@@ -55,7 +55,7 @@
                                                                                                                              NSError *error) {
         if (!error) {
           NSLog(@"event id: %@",obj[@"id"]);
-          if ( [TPSSDataSource createEventWith:obj[@"id"] :selectedSport[TPSSDataSourceDictKeySportID] :stadium[TPSSDataSourceDictKeyStadiumID] ] ){
+          if ( [TPSSDataSource createEventWith:obj[@"id"] :[TPSSDataSource sharedDataSource].userId: selectedSport[TPSSDataSourceDictKeySportID] :stadium[TPSSDataSourceDictKeyStadiumID] ] ){
             NSString *message  = [[NSString alloc]initWithFormat:@"創建活動成功！\n活動名稱:%@\n活動時間:%@",eventName,selectedStartTimeForShow];
             [[[UIAlertView alloc] initWithTitle:@"創建活動"
                                        message:message

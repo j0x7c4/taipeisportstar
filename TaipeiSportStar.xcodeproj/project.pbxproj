@@ -85,6 +85,7 @@
 		18452CEF166F90F500ED5480 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18452CEE166F90F400ED5480 /* CoreLocation.framework */; };
 		18452CF7166F954700ED5480 /* TPSSJoinSelectionMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18452CF6166F954700ED5480 /* TPSSJoinSelectionMapViewController.m */; };
 		18452CFE166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18452CFD166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m */; };
+		187BD915168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BD914168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m */; };
 		187F847D16829B25001FF6DC /* icon_v7.png in Resources */ = {isa = PBXBuildFile; fileRef = 187F847C16829B25001FF6DC /* icon_v7.png */; };
 		18811C71167716BC001FCD45 /* TPSSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 18811C70167716BC001FCD45 /* TPSSDataSource.m */; };
 		18811C791677209B001FCD45 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 18811C781677209B001FCD45 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -96,6 +97,8 @@
 		189A971E167F13A600F4765A /* TPSSSportListInJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A971D167F13A600F4765A /* TPSSSportListInJoinViewController.m */; };
 		18CBE7AE16797F480060F206 /* TPSSMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE7AD16797F480060F206 /* TPSSMapAnnotation.m */; };
 		18CBE7B4167982100060F206 /* TPSSSportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE7B3167982100060F206 /* TPSSSportListViewController.m */; };
+		18EED73A1685C63200605875 /* join_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EED7391685C63200605875 /* join_button.png */; };
+		18EED73D1685C6B700605875 /* create_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EED73C1685C6B700605875 /* create_button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +202,8 @@
 		18452CF6166F954700ED5480 /* TPSSJoinSelectionMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSJoinSelectionMapViewController.m; sourceTree = "<group>"; };
 		18452CFC166FC76000ED5480 /* TPSSCreateSelectionMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSCreateSelectionMapViewController.h; sourceTree = "<group>"; };
 		18452CFD166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSCreateSelectionMapViewController.m; sourceTree = "<group>"; };
+		187BD913168395CF00E35AA0 /* TPSSHomeSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSHomeSectionHeaderView.h; sourceTree = "<group>"; };
+		187BD914168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSHomeSectionHeaderView.m; sourceTree = "<group>"; };
 		187F847C16829B25001FF6DC /* icon_v7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_v7.png; sourceTree = "<group>"; };
 		18811C6F167716BC001FCD45 /* TPSSDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSDataSource.h; sourceTree = "<group>"; };
 		18811C70167716BC001FCD45 /* TPSSDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSDataSource.m; sourceTree = "<group>"; };
@@ -220,6 +225,8 @@
 		18CBE7AD16797F480060F206 /* TPSSMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSMapAnnotation.m; sourceTree = "<group>"; };
 		18CBE7B2167982100060F206 /* TPSSSportListInCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSSportListInCreateViewController.h; sourceTree = "<group>"; };
 		18CBE7B3167982100060F206 /* TPSSSportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSSportListViewController.m; sourceTree = "<group>"; };
+		18EED7391685C63200605875 /* join_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = join_button.png; sourceTree = "<group>"; };
+		18EED73C1685C6B700605875 /* create_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +332,7 @@
 		18452CB7166F81F900ED5480 /* TaipeiSportStar */ = {
 			isa = PBXGroup;
 			children = (
+				187BD9111683958F00E35AA0 /* Custom UIViews */,
 				05E391E21682537100F21DCF /* images */,
 				189A9711167DC85900F4765A /* Stadium list */,
 				189A9706167DBCE400F4765A /* Stadium detail */,
@@ -348,6 +356,8 @@
 		18452CB8166F81F900ED5480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18EED73C1685C6B700605875 /* create_button.png */,
+				18EED7391685C63200605875 /* join_button.png */,
 				05F3B3AF1680C959000DDA18 /* sport2.png */,
 				05E3921B16826DA000F21DCF /* BG4.png */,
 				05E391B516810F5300F21DCF /* slogan.png */,
@@ -415,6 +425,15 @@
 				18CBE7AD16797F480060F206 /* TPSSMapAnnotation.m */,
 			);
 			name = MapView;
+			sourceTree = "<group>";
+		};
+		187BD9111683958F00E35AA0 /* Custom UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				187BD913168395CF00E35AA0 /* TPSSHomeSectionHeaderView.h */,
+				187BD914168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m */,
+			);
+			name = "Custom UIViews";
 			sourceTree = "<group>";
 		};
 		18811C6D16771681001FCD45 /* Data source */ = {
@@ -609,6 +628,8 @@
 				05E392221682751F00F21DCF /* BG5.png in Resources */,
 				05E392241682763000F21DCF /* bt_2.png in Resources */,
 				187F847D16829B25001FF6DC /* icon_v7.png in Resources */,
+				18EED73A1685C63200605875 /* join_button.png in Resources */,
+				18EED73D1685C6B700605875 /* create_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +683,7 @@
 				05E391DE1682535500F21DCF /* TPSSMapBaseViewController.m in Sources */,
 				05E391E11682536B00F21DCF /* TPSSStadiumDetailBaseViewController.m in Sources */,
 				05E3922716827DD700F21DCF /* TPSSDetailInformationViewController.m in Sources */,
+				187BD915168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

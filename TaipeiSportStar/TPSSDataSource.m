@@ -60,8 +60,8 @@ NSString * const TPSSDataSourceDictKeyWeatherImageTime = @"time";
   return sharedDataSource;
   
 }
-+ (BOOL) createEventWith:(NSString*)eventId:(NSString*)sportId:(NSString*)andStadiumId {
-  NSString *urlString = [[NSString alloc]initWithFormat:@"http://taipeisportstar.appspot.com/api/event/create/%@/%@/%@",eventId,sportId,andStadiumId ];
++ (BOOL) createEventWith:(NSString*)eventId:(NSString*)userId:(NSString*)sportId:(NSString*)andStadiumId {
+  NSString *urlString = [[NSString alloc]initWithFormat:@"http://taipeisportstar.appspot.com/api/event/create/%@/%@/%@/%@",eventId,sportId,andStadiumId,userId ];
   NSLog(@"%@",urlString);
   NSHTTPURLResponse *response = nil;
   NSError *error = nil;

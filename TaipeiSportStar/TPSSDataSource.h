@@ -43,10 +43,10 @@ extern NSString * const TPSSDataSourceDictKeyWeatherConditionText;
   NSCache *cache;
   NSArray *stadiumImageList;
 }
-
+@property(strong,nonatomic) NSString* userId;
 
 + (TPSSDataSource *)sharedDataSource;
-+ (BOOL) createEventWith:(NSString*)eventId:(NSString*)sportId:(NSString*)andStadiumId;
++ (BOOL) createEventWith:(NSString*)eventId:(NSString*)userId:(NSString*)sportId:(NSString*)andStadiumId;
 - (void)refresh;
 - (void)cleanCache;
 - (NSDictionary *) stadiumWithID:(NSString *) ID;

@@ -18,7 +18,7 @@
 #import "TPSSAppDelegate.h"
 #import "TPSSHomeViewController.h"
 
-@interface SLViewController ()
+@interface SLViewController () 
 
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonLoginLogout;
@@ -55,16 +55,14 @@
         // time they run the applicaiton they will be presented with log in UX again; most
         // users will simply close the app or switch away, without logging out; this will
         // cause the implicit cached-token login to occur on next launch of the application
-        [appDelegate closeSession];
+        [FBSession.activeSession closeAndClearTokenInformation ];
         
     } else {
         // The user has initiated a login, so call the openSession method
         // and show the login UX if necessary.
         
         [appDelegate openSessionWithAllowLoginUI:YES];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        TPSSHomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeViewController"];
-        [self.navigationController pushViewController:homeViewController animated:YES];
+        
         
     }
     
@@ -75,7 +73,6 @@
 - (void)dealloc
 {
     self.buttonLoginLogout = nil;
-    [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -95,11 +92,11 @@
 
 
 - (void)sessionStateChanged:(NSNotification*)notification {
-    //NSLog(@"%@",notification);
+    NSLog(@"%@",notification);
     if (FBSession.activeSession.isOpen) {
-        [self.buttonLoginLogout setTitle:@"登出" forState:UIControlStateNormal];
-    } else {
-        [self.buttonLoginLogout setTitle:@"登錄" forState:UIControlStateNormal];
+      UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+      TPSSHomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeViewController"];
+      [self.navigationController pushViewController:homeViewController animated:YES];
     }
 }
 #pragma mark -

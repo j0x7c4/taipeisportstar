@@ -8,5 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-@interface TPSSHomeViewController : UIViewController
+@interface TPSSHomeViewController : UIViewController 
+- (void)makeUserDetails;
 @end

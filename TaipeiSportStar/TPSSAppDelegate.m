@@ -122,7 +122,6 @@ NSString *const FBSessionStateChangedNotification =
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [FBProfilePictureView class];
   return YES;
 }
 							
