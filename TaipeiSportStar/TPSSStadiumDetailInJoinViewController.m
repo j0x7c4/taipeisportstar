@@ -7,7 +7,7 @@
 //
 
 #import "TPSSStadiumDetailInJoinViewController.h"
-
+#import "TPSSProfileDetailViewController.h"
 static NSString *CellIdentifier = @"Cell";
 @interface TPSSStadiumDetailInJoinViewController () {
   NSArray * events;
@@ -43,7 +43,23 @@ static NSString *CellIdentifier = @"Cell";
   }];
 
 }
+- (IBAction)ownerButtonClicked:(UIButton*)sender {
+  NSString* owner_id = events[sender.tag][TPSSDataSourceDictKeyEventOwnerID];
+  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+  TPSSProfileDetailViewController *profileDetailViewController = [storyboard instantiateViewControllerWithIdentifier:@"profileDetailView"];
+  [profileDetailViewController setUserId:owner_id];
+  [self.navigationController pushViewController:profileDetailViewController animated:YES];
+}
 
+- (IBAction)joinButtonClicked2:(UIButton*)sender {
+  selectedEventId = events[sender.tag][TPSSDataSourceDictKeyEventID];
+NSString* message = [[NSString alloc]initWithFormat:@"是否確定加入%@?",events[sender.tag][TPSSDataSourceDictKeyEventSport] ];
+[[[UIAlertView alloc] initWithTitle:@"加入活動"
+                            message:message
+                           delegate: self
+                  cancelButtonTitle:@"取消"
+                  otherButtonTitles:@"確定",nil] show];
+}
 - (void)setSelectedEventId:(NSString*)eventId {
   selectedEventId = eventId;
 }
@@ -56,6 +72,7 @@ static NSString *CellIdentifier = @"Cell";
     NSLog(@"%@",eventId);
     event = [[NSDictionary alloc]initWithObjectsAndKeys:eventId,TPSSDataSourceDictKeyEventID,
              stadium[@"event"][i][@"event_sport"][TPSSDataSourceDictKeySportName],TPSSDataSourceDictKeyEventSport,
+             stadium[@"event"][i][TPSSDataSourceDictKeyEventOwnerID],TPSSDataSourceDictKeyEventOwnerID,
              nil];
     [eventsBuffer addObject:event];
   }
@@ -73,6 +90,13 @@ static NSString *CellIdentifier = @"Cell";
     [joinButton setTitle:@"加入活動" forState:UIControlStateNormal];
     [joinButton addTarget:self action:@selector(joinButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.actionView addSubview:joinButton];
+    
+    UIButton* profileButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    profileButton.frame = CGRectMake(160-buttonWidth/2, buttonHeight+10, buttonWidth, buttonHeight);
+    [profileButton setTitle:@"創建者" forState:UIControlStateNormal];
+    
+    [profileButton addTarget:self action:@selector(joinButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.actionView addSubview:profileButton];
   }
 }
 
@@ -92,7 +116,7 @@ static NSString *CellIdentifier = @"Cell";
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                   reuseIdentifier:CellIdentifier];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType =UITableViewCellAccessoryNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.textLabel.font = [UIFont systemFontOfSize:16];
@@ -109,8 +133,23 @@ static NSString *CellIdentifier = @"Cell";
   }
   NSUInteger row = indexPath.row;
   cell.textLabel.text = events[row][TPSSDataSourceDictKeyEventSport];
-  cell.detailTextLabel.text = @"";
-  
+  NSString * ownerId = events[row][TPSSDataSourceDictKeyEventOwnerID];
+  NSString *urlString = [NSString
+                         stringWithFormat:
+                         @"http://graph.facebook.com/%@/picture?type=square",ownerId];
+  NSURL *url = [NSURL URLWithString:urlString];
+  NSData *imageData = [NSData dataWithContentsOfURL:url];
+  cell.imageView.image = [UIImage imageWithData:imageData];
+  UIButton *joinButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+  joinButton.tag = row;
+  [joinButton addTarget:self action:@selector(joinButtonClicked2:) forControlEvents:UIControlEventTouchUpInside];
+  joinButton.frame = CGRectMake(cell.frame.size.width-joinButton.frame.size.width-20, cell.frame.size.height/2-joinButton.frame.size.height/2, joinButton.frame.size.width,joinButton.frame.size.height);
+  [cell addSubview:joinButton];
+  UIButton *ownerButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+  ownerButton.tag = row;
+  ownerButton.frame = CGRectMake(cell.frame.size.width-ownerButton.frame.size.width-50-joinButton.frame.size.width, cell.frame.size.height/2-ownerButton.frame.size.height/2, ownerButton.frame.size.width,ownerButton.frame.size.height);
+  [ownerButton addTarget:self action:@selector(ownerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+  [cell addSubview:ownerButton];
   return cell;
 }
 
@@ -126,13 +165,7 @@ static NSString *CellIdentifier = @"Cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  selectedEventId = events[indexPath.row][TPSSDataSourceDictKeyEventID];
-  NSString* message = [[NSString alloc]initWithFormat:@"是否確定加入%@?",events[indexPath.row][TPSSDataSourceDictKeyEventSport] ];
-  [[[UIAlertView alloc] initWithTitle:@"加入活動"
-                              message:message
-                             delegate: self
-                    cancelButtonTitle:@"取消"
-                    otherButtonTitles:@"確定",nil] show];
+  
   
 }
 

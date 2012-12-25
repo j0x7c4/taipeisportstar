@@ -33,7 +33,7 @@
   self.title = self.labelStadiumName.text = stadium[TPSSDataSourceDictKeyStadiumName];
     self.labelOpenTime.text = stadium[TPSSDataSourceDictKeyStadiumTime];
 	UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-  
+  UIBarButtonItem *moreButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
   self.navigationItem.rightBarButtonItem = shareButton;
 }
 

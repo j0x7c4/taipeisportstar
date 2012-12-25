@@ -26,7 +26,7 @@ extern NSString * const TPSSDataSourceDictKeySportID;
 
 extern NSString * const TPSSDataSourceDictKeyEventID;
 extern NSString * const TPSSDataSourceDictKeyEventSport;
-
+extern NSString * const TPSSDataSourceDictKeyEventOwnerID;
 extern NSString * const TPSSDataSourceDictKeyWeatherImage;
 extern NSString * const TPSSDataSourceDictKeyWeatherImageHeight;
 extern NSString * const TPSSDataSourceDictKeyWeatherImageWidth;
@@ -47,9 +47,11 @@ extern NSString * const TPSSDataSourceDictKeyWeatherConditionText;
 
 + (TPSSDataSource *)sharedDataSource;
 + (BOOL) createEventWith:(NSString*)eventId:(NSString*)userId:(NSString*)sportId:(NSString*)andStadiumId;
++ (BOOL) createProfileWith:(NSString*)userId;
 - (void)refresh;
 - (void)cleanCache;
 - (NSDictionary *) stadiumWithID:(NSString *) ID;
+- (NSArray *)arrayWithEventsByOwnerID:(NSString*) ID;
 - (NSArray *)arrayWithAllStadiums;
 - (NSArray *)arrayWithAllSports;
 - (NSArray *)arrayWithStadiumsBySport:(NSString*) sport;
@@ -57,6 +59,9 @@ extern NSString * const TPSSDataSourceDictKeyWeatherConditionText;
 - (NSArray *)arrayWithSportsByType:(NSString*) type;
 - (NSArray *)arrayWithStadiumsByEvent;
 - (NSArray *)arrayWithSportsByEvent;
+- (NSDictionary*) profileWithID:(NSString *)ID;
+
+- (NSDictionary *)fbProfileWithID:(NSString*) ID;
 - (NSDictionary *) currentWeather;
 
 @end

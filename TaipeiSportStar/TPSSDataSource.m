@@ -37,6 +37,7 @@ NSString * const TPSSDataSourceDictKeySportName = @"name";
 NSString * const TPSSDataSourceDictKeySportID = @"id";
 NSString * const TPSSDataSourceDictKeyEventID = @"event_id";
 NSString * const TPSSDataSourceDictKeyEventSport = @"event_sport";
+NSString * const TPSSDataSourceDictKeyEventOwnerID = @"owner_id";
 
 NSString * const TPSSDataSourceDictKeyWeatherCondition = @"condition";
 NSString * const TPSSDataSourceDictKeyWeatherConditionCode = @"code";
@@ -72,7 +73,18 @@ NSString * const TPSSDataSourceDictKeyWeatherImageTime = @"time";
   NSLog(@"%d",response.statusCode);
   return response.statusCode == 200;
 }
-
++ (BOOL) createProfileWith:(NSString*)userId {
+  NSString *urlString = [[NSString alloc]initWithFormat:@"http://taipeisportstar.appspot.com/api/profile/create/%@",userId ];
+  NSLog(@"%@",urlString);
+  NSHTTPURLResponse *response = nil;
+  NSError *error = nil;
+  NSURL *url = [NSURL URLWithString:urlString];
+  NSURLRequest* request = [NSURLRequest requestWithURL:url];
+  [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+  NSLog(@"%@",[response allHeaderFields]);
+  NSLog(@"%d",response.statusCode);
+  return response.statusCode == 200;
+}
 - (id) init {
   if ( self=[super init] ) {
     //NSString *path = [[NSBundle mainBundle] pathForResource:@"stadium_img/stadiums" ofType:@"plist"];
@@ -238,6 +250,13 @@ NSString * const TPSSDataSourceDictKeyWeatherImageTime = @"time";
   NSArray *stadiums=(NSArray *)[data mutableObjectFromJSONData];
   return stadiums;
 }
+- (NSDictionary *)fbProfileWithID:(NSString*) ID {
+  NSString *strURL = [[NSString alloc] initWithFormat:@"https://graph.facebook.com/%@",ID];
+  NSURL *jsonURL = [NSURL URLWithString:strURL];
+  NSString *jsonstring = [[NSString alloc] initWithContentsOfURL:jsonURL encoding:NSUTF8StringEncoding error:nil];
+  NSData *data=[jsonstring dataUsingEncoding:NSUTF8StringEncoding];
+  return (NSDictionary *)[data mutableObjectFromJSONData];
+}
 - (NSArray *)arrayWithSportsByEvent {
   NSString *strURL = @"http://taipeisportstar.appspot.com/api/event/select/sport";
   NSURL *jsonURL = [NSURL URLWithString:strURL];
@@ -248,6 +267,20 @@ NSString * const TPSSDataSourceDictKeyWeatherImageTime = @"time";
 }
 - (NSDictionary *) currentWeather {
   NSString *strURL = @"http://taipeisportstar.appspot.com/api/weather";
+  NSURL *jsonURL = [NSURL URLWithString:strURL];
+  NSString *jsonstring = [[NSString alloc] initWithContentsOfURL:jsonURL encoding:NSUTF8StringEncoding error:nil];
+  NSData *data=[jsonstring dataUsingEncoding:NSUTF8StringEncoding];
+  return (NSDictionary *)[data mutableObjectFromJSONData];
+}
+- (NSArray *)arrayWithEventsByOwnerID:(NSString*) ID {
+  NSString *strURL = [[NSString alloc]initWithFormat: @"http://taipeisportstar.appspot.com/api/event/select/ownerid/%@", ID];
+  NSURL *jsonURL = [NSURL URLWithString:strURL];
+  NSString *jsonstring = [[NSString alloc] initWithContentsOfURL:jsonURL encoding:NSUTF8StringEncoding error:nil];
+  NSData *data=[jsonstring dataUsingEncoding:NSUTF8StringEncoding];
+  return (NSArray *)[data mutableObjectFromJSONData];
+}
+- (NSDictionary*) profileWithID:(NSString *)ID {
+  NSString *strURL = [[NSString alloc]initWithFormat: @"http://taipeisportstar.appspot.com/api/profile/select/id/%@", ID];
   NSURL *jsonURL = [NSURL URLWithString:strURL];
   NSString *jsonstring = [[NSString alloc] initWithContentsOfURL:jsonURL encoding:NSUTF8StringEncoding error:nil];
   NSData *data=[jsonstring dataUsingEncoding:NSUTF8StringEncoding];

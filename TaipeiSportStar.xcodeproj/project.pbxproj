@@ -99,6 +99,9 @@
 		18CBE7B4167982100060F206 /* TPSSSportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CBE7B3167982100060F206 /* TPSSSportListViewController.m */; };
 		18EED73A1685C63200605875 /* join_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EED7391685C63200605875 /* join_button.png */; };
 		18EED73D1685C6B700605875 /* create_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EED73C1685C6B700605875 /* create_button.png */; };
+		18EED74116862BCC00605875 /* TPSSProfileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EED74016862BCC00605875 /* TPSSProfileDetailViewController.m */; };
+		18EED7441686379400605875 /* gender_female.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EED7421686379400605875 /* gender_female.png */; };
+		18EED7451686379400605875 /* gender_male.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EED7431686379400605875 /* gender_male.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +230,10 @@
 		18CBE7B3167982100060F206 /* TPSSSportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSSportListViewController.m; sourceTree = "<group>"; };
 		18EED7391685C63200605875 /* join_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = join_button.png; sourceTree = "<group>"; };
 		18EED73C1685C6B700605875 /* create_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_button.png; sourceTree = "<group>"; };
+		18EED73F16862BCC00605875 /* TPSSProfileDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSProfileDetailViewController.h; sourceTree = "<group>"; };
+		18EED74016862BCC00605875 /* TPSSProfileDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSProfileDetailViewController.m; sourceTree = "<group>"; };
+		18EED7421686379400605875 /* gender_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gender_female.png; sourceTree = "<group>"; };
+		18EED7431686379400605875 /* gender_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gender_male.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +339,7 @@
 		18452CB7166F81F900ED5480 /* TaipeiSportStar */ = {
 			isa = PBXGroup;
 			children = (
+				18EED73E16862BA500605875 /* Profile Detail */,
 				187BD9111683958F00E35AA0 /* Custom UIViews */,
 				05E391E21682537100F21DCF /* images */,
 				189A9711167DC85900F4765A /* Stadium list */,
@@ -356,6 +364,8 @@
 		18452CB8166F81F900ED5480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18EED7421686379400605875 /* gender_female.png */,
+				18EED7431686379400605875 /* gender_male.png */,
 				18EED73C1685C6B700605875 /* create_button.png */,
 				18EED7391685C63200605875 /* join_button.png */,
 				05F3B3AF1680C959000DDA18 /* sport2.png */,
@@ -501,6 +511,15 @@
 			name = "Sports list";
 			sourceTree = "<group>";
 		};
+		18EED73E16862BA500605875 /* Profile Detail */ = {
+			isa = PBXGroup;
+			children = (
+				18EED73F16862BCC00605875 /* TPSSProfileDetailViewController.h */,
+				18EED74016862BCC00605875 /* TPSSProfileDetailViewController.m */,
+			);
+			name = "Profile Detail";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -630,6 +649,8 @@
 				187F847D16829B25001FF6DC /* icon_v7.png in Resources */,
 				18EED73A1685C63200605875 /* join_button.png in Resources */,
 				18EED73D1685C6B700605875 /* create_button.png in Resources */,
+				18EED7441686379400605875 /* gender_female.png in Resources */,
+				18EED7451686379400605875 /* gender_male.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +705,7 @@
 				05E391E11682536B00F21DCF /* TPSSStadiumDetailBaseViewController.m in Sources */,
 				05E3922716827DD700F21DCF /* TPSSDetailInformationViewController.m in Sources */,
 				187BD915168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m in Sources */,
+				18EED74116862BCC00605875 /* TPSSProfileDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
