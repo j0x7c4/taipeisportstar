@@ -48,7 +48,7 @@
   if ([annotation isKindOfClass:[TPSSMapAnnotation class]])
   {
     NSString* annotationIdentifier = [[NSString alloc] initWithFormat:@"CustomPinAnnotationView.%@",((TPSSMapAnnotation*)annotation).stadiumID];
-    NSLog(@"%@",annotationIdentifier);
+    //NSLog(@"%@",annotationIdentifier);
     // Try to dequeue an existing pin view first.
     MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
                                                              dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];

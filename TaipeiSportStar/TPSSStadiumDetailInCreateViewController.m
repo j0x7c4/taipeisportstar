@@ -7,7 +7,7 @@
 //
 
 #import "TPSSStadiumDetailInCreateViewController.h"
-
+#import "TPSSFriendListViewController.h"
 
 @interface TPSSStadiumDetailInCreateViewController () {
   NSArray* sports;
@@ -19,8 +19,10 @@
   NSString* selectedStartTimeForShow;
   NSString* selectedEndTime;
   NSString* selectedDescription;
+  NSString* eventId;
 }
 @property (strong, nonatomic) IBOutlet UIButton *buttonCreateEvent;
+@property (strong, nonatomic) IBOutlet UIButton *buttonInviteFriends;
 @property (strong, nonatomic) IBOutlet UITextField *selectedSportTextField;
 @property (strong, nonatomic) IBOutlet UITextField *selectedTimeTextField;
 @property (strong, nonatomic) IBOutlet UITextField *eventDescription;
@@ -55,7 +57,8 @@
                                                                                                                              NSError *error) {
         if (!error) {
           NSLog(@"event id: %@",obj[@"id"]);
-          if ( [TPSSDataSource createEventWith:obj[@"id"] :[TPSSDataSource sharedDataSource].userId: selectedSport[TPSSDataSourceDictKeySportID] :stadium[TPSSDataSourceDictKeyStadiumID] ] ){
+          eventId = obj[@"id"];
+          if ( [TPSSDataSource createEventWith:eventId :[TPSSDataSource sharedDataSource].userId: selectedSport[TPSSDataSourceDictKeySportID] :stadium[TPSSDataSourceDictKeyStadiumID] ] ){
             NSString *message  = [[NSString alloc]initWithFormat:@"創建活動成功！\n活動名稱:%@\n活動時間:%@",eventName,selectedStartTimeForShow];
             [[[UIAlertView alloc] initWithTitle:@"創建活動"
                                        message:message
@@ -87,6 +90,18 @@
     }
   }
 }
+- (IBAction)inviteButtonClicked:(id)sender {
+  if ( eventId ) {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    TPSSFriendListViewController* friendListViewController = [storyboard instantiateViewControllerWithIdentifier:@"friendList"];
+    [friendListViewController setEventId:eventId];
+    [self.navigationController pushViewController:friendListViewController animated:YES];
+  }
+  else {
+    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"邀請好友" message:@"需要先創建後動才能邀請好友" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles: nil];
+    [alert show];
+  }
+}
 
 - (void) setWithStadiumDictionary:(NSDictionary *)stadiumDict {
     stadium = stadiumDict;
@@ -100,7 +115,6 @@
     [super viewDidLoad];
 
   sports = [stadium[TPSSDataSourceDictKeyStadiumSports] allValues];
-    self.buttonCreateEvent.titleLabel.text = @"創建活動";
   if ( selectedSport ) {
     self.selectedSportTextField.text = selectedSport[TPSSDataSourceDictKeySportName];
     
@@ -184,7 +198,30 @@
   
 }
 
+- (void) textFieldDidBeginEditing:(UITextField *)textField {
+  NSTimeInterval animationDuration = 0.30f;
+  CGRect frame = self.view.frame;
+  frame.origin.y -= 256;
+  frame.size.height+=256;
+  self.view.frame = frame;
+  [UIView beginAnimations:@"ResizeView" context:nil];
+  [UIView setAnimationDuration:animationDuration];
+  self.view.frame = frame;
+  [UIView commitAnimations];
+}
 
+- (void) textFieldDidEndEditing:(UITextField *)textField {
+  NSTimeInterval animationDuration = 0.30f;
+  CGRect frame = self.view.frame;
+  frame.origin.y += 256;
+  frame.size.height -=256;
+  self.view.frame = frame;
+  [UIView beginAnimations:@"ResizeView" context:nil];
+  [UIView setAnimationDuration:animationDuration];
+  self.view.frame = frame;
+  [UIView commitAnimations];
+  [textField resignFirstResponder];
+}
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
   return 1;
 }

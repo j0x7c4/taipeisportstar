@@ -10,7 +10,7 @@
 #import "TPSSProfileDetailViewController.h"
 static NSString *CellIdentifier = @"Cell";
 @interface TPSSStadiumDetailInJoinViewController () {
-  NSArray * events;
+  NSMutableArray * events;
   NSString* selectedEventId;
 }
 @property (strong, nonatomic) IBOutlet UIView *actionView;
@@ -65,19 +65,38 @@ NSString* message = [[NSString alloc]initWithFormat:@"是否確定加入%@?",eve
 }
 - (void) setWithStadiumDictionary:(NSDictionary *)stadiumDict {
   stadium = stadiumDict;
-  NSMutableArray* eventsBuffer = [[NSMutableArray alloc]init];
+  events = [[NSMutableArray alloc]initWithCapacity:[stadium[@"event"]count]];
   for (int i = 0 ; i<[stadium[@"event"] count] ; i++ ) {
-    NSDictionary *event;
+    events[i] = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"",TPSSDataSourceDictKeyEventID,
+                                                            @"",TPSSDataSourceDictKeySportName,
+                                                            @"",TPSSDataSourceDictKeyEventOwnerID,
+                                                            @"",TPSSDataSourceDictKeyEventDetailText , nil];
     NSString* eventId = stadium[@"event"][i][@"event_id"];
-    NSLog(@"%@",eventId);
-    event = [[NSDictionary alloc]initWithObjectsAndKeys:eventId,TPSSDataSourceDictKeyEventID,
-             stadium[@"event"][i][@"event_sport"][TPSSDataSourceDictKeySportName],TPSSDataSourceDictKeyEventSport,
-             stadium[@"event"][i][TPSSDataSourceDictKeyEventOwnerID],TPSSDataSourceDictKeyEventOwnerID,
-             nil];
-    [eventsBuffer addObject:event];
+    [[FBRequest requestWithGraphPath:eventId
+                          parameters:nil
+                          HTTPMethod:@"GET"] startWithCompletionHandler:^(FBRequestConnection *connection,NSDictionary<FBGraphObject> *obj,NSError *error) {
+      if (!error) {
+        NSLog(@"%@",obj[@"start_time"]);
+        NSDateFormatter *dateformatterSrc = [[NSDateFormatter alloc]init];
+        [dateformatterSrc setDateFormat:@"yyyy-MM-dd HH:mm:ss+0800"];
+        NSString* dateStr = [[NSString alloc]initWithFormat:@"%@",obj[@"start_time"]];
+        dateStr = [dateStr stringByReplacingOccurrencesOfString:@"T" withString:@" "];
+        NSLog(@"date string:%@",dateStr);
+        NSDate* date = [dateformatterSrc dateFromString:dateStr];
+        NSLog(@"date: %@",date);
+        NSDateFormatter *dateformatterDst = [[NSDateFormatter alloc]init];
+        [dateformatterDst setDateFormat:@"yyyy年MM月dd日 HH:mm:ss"];
+        events[i][TPSSDataSourceDictKeyEventDetailText] = [dateformatterDst stringFromDate:date];
+        [self.tableViewSportList reloadData];
+      }
+      else {
+        NSLog(@"%@",error);
+      }
+    }];
+    events[i][TPSSDataSourceDictKeyEventID] = eventId;
+    events[i][TPSSDataSourceDictKeyEventSport] = stadium[@"event"][i][@"event_sport"][TPSSDataSourceDictKeySportName];
+    events[i][TPSSDataSourceDictKeyEventOwnerID] = stadium[@"event"][i][TPSSDataSourceDictKeyEventOwnerID];
   }
-  events = [[NSArray alloc]initWithArray:eventsBuffer];
-  eventsBuffer = nil;
 }
 - (void)viewDidLoad
 {
@@ -133,6 +152,8 @@ NSString* message = [[NSString alloc]initWithFormat:@"是否確定加入%@?",eve
   }
   NSUInteger row = indexPath.row;
   cell.textLabel.text = events[row][TPSSDataSourceDictKeyEventSport];
+  cell.detailTextLabel.text = events[row][TPSSDataSourceDictKeyEventDetailText];
+  
   NSString * ownerId = events[row][TPSSDataSourceDictKeyEventOwnerID];
   NSString *urlString = [NSString
                          stringWithFormat:
@@ -149,7 +170,8 @@ NSString* message = [[NSString alloc]initWithFormat:@"是否確定加入%@?",eve
   ownerButton.tag = row;
   ownerButton.frame = CGRectMake(cell.frame.size.width-ownerButton.frame.size.width-50-joinButton.frame.size.width, cell.frame.size.height/2-ownerButton.frame.size.height/2, ownerButton.frame.size.width,ownerButton.frame.size.height);
   [ownerButton addTarget:self action:@selector(ownerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-  [cell addSubview:ownerButton];
+  [cell addSubview:ownerButton ];
+
   return cell;
 }
 

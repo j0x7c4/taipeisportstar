@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userGuides>
                             <userLayoutGuide location="252" affinity="minY"/>
-                            <userLayoutGuide location="160" affinity="minX"/>
+                            <userLayoutGuide location="159" affinity="minX"/>
                         </userGuides>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aV-JW-YBq">
@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Mts-q2-UYg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Login with Facebook" image="Login_button.png">
+                                <state key="normal" title="Login with Facebook" image="login_button.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -266,7 +266,7 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7f-6d-o1C">
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="24z-Oy-Xvg">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="24z-Oy-Xvg">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="342" id="t0F-eI-7Pu"/>
@@ -485,6 +485,24 @@
                                             <constraint firstAttribute="height" constant="128" type="user" id="QVC-Z2-ASW"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4f-Bs-xKk">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="YBB-HZ-van"/>
+                                            <constraint firstAttribute="width" priority="777" constant="122" type="user" id="avf-jR-EUA"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" type="user" id="mse-RN-nhU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <state key="normal" image="event_create_button.png">
+                                            <color key="titleColor" red="0.054901964960000001" green="0.019607843829999999" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createEvent:" destination="J5m-fh-GIQ" eventType="touchUpInside" id="EvZ-S4-j4K"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stadium name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1r-hj-sWM">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="9qE-wp-jGF"/>
@@ -499,24 +517,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mu-Dg-vpY">
-                                        <constraints>
-                                            <constraint firstAttribute="width" priority="777" constant="122" type="user" id="ceZ-6d-rB7"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" type="user" id="oi3-O5-Omo"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="43" type="user" id="x2c-hr-89b"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                        <state key="normal" title="創建活動">
-                                            <color key="titleColor" red="0.054901964960000001" green="0.019607843829999999" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="createEvent:" destination="J5m-fh-GIQ" eventType="touchUpInside" id="4n7-Pf-Uhy"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="選擇運動" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CpB-iH-qXa">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" type="user" id="voa-f0-Y6y"/>
@@ -596,16 +596,34 @@
                                             <action selector="detailButtonClicked:" destination="J5m-fh-GIQ" eventType="touchUpInside" id="GHP-Kg-4RQ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8z0-Y9-IOs">
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="777" constant="122" type="user" id="9Xa-4u-Fdv"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" type="user" id="e1q-3l-Fwr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <state key="normal" image="event_invite_friends.png">
+                                            <color key="titleColor" red="0.054901964960000001" green="0.019607843829999999" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inviteButtonClicked:" destination="J5m-fh-GIQ" eventType="touchUpInside" id="2IS-pE-ZlS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="5mu-Dg-vpY" firstAttribute="top" secondItem="F9y-MC-NFT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0Yn-R5-7Ft"/>
                                     <constraint firstItem="lpt-78-Iai" firstAttribute="centerY" secondItem="3Z2-hK-oKh" secondAttribute="centerY" type="default" id="2SW-iK-75W"/>
+                                    <constraint firstItem="D1N-fN-AuN" firstAttribute="top" secondItem="jyG-C8-XXD" secondAttribute="top" type="default" id="8Rf-t9-6Dk"/>
                                     <constraint firstItem="gPM-xL-tzc" firstAttribute="leading" secondItem="zFw-Op-0uW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="AOM-2w-a1z"/>
-                                    <constraint firstItem="jyG-C8-XXD" firstAttribute="top" secondItem="D1N-fN-AuN" secondAttribute="top" type="default" id="DMf-1q-llC"/>
                                     <constraint firstItem="K81-9a-5Oa" firstAttribute="baseline" secondItem="F9y-MC-NFT" secondAttribute="baseline" type="default" id="Dd3-vJ-O4D"/>
                                     <constraint firstItem="CKS-CA-7CO" firstAttribute="leading" secondItem="lpt-78-Iai" secondAttribute="leading" type="default" id="Gnq-i4-TRq"/>
+                                    <constraint firstItem="8z0-Y9-IOs" firstAttribute="top" secondItem="F9y-MC-NFT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JCF-eJ-rgL"/>
                                     <constraint firstItem="3Z2-hK-oKh" firstAttribute="leading" secondItem="D1N-fN-AuN" secondAttribute="leading" type="default" id="Je8-0d-K2d"/>
                                     <constraint firstItem="T1r-hj-sWM" firstAttribute="top" secondItem="zFw-Op-0uW" secondAttribute="top" constant="147" id="Jej-a8-sed"/>
+                                    <constraint firstItem="i4f-Bs-xKk" firstAttribute="bottom" secondItem="8z0-Y9-IOs" secondAttribute="bottom" type="default" id="Laq-2o-mRe"/>
                                     <constraint firstItem="tIe-EX-AKE" firstAttribute="top" secondItem="CKS-CA-7CO" secondAttribute="top" type="default" id="Lqv-aO-ToW"/>
                                     <constraint firstAttribute="trailing" secondItem="CpB-iH-qXa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="M9U-ZV-arl"/>
                                     <constraint firstItem="K81-9a-5Oa" firstAttribute="leading" secondItem="zFw-Op-0uW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="N3i-pX-NAB"/>
@@ -614,31 +632,32 @@
                                     <constraint firstItem="CKS-CA-7CO" firstAttribute="leading" secondItem="T1r-hj-sWM" secondAttribute="leading" type="default" id="PCE-wU-MT4"/>
                                     <constraint firstItem="F9y-MC-NFT" firstAttribute="top" secondItem="K81-9a-5Oa" secondAttribute="bottom" constant="8" type="user" id="PcI-Yu-kwj"/>
                                     <constraint firstAttribute="trailing" secondItem="F9y-MC-NFT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Pp8-wI-j1K"/>
+                                    <constraint firstItem="lpt-78-Iai" firstAttribute="top" secondItem="gPM-xL-tzc" secondAttribute="top" type="default" id="Q8w-Kx-vbd"/>
                                     <constraint firstItem="dSs-2H-7Gd" firstAttribute="leading" secondItem="zFw-Op-0uW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QlK-Nc-yfl"/>
-                                    <constraint firstAttribute="bottom" secondItem="5mu-Dg-vpY" secondAttribute="bottom" constant="146" id="T1M-gT-doy"/>
                                     <constraint firstItem="T1r-hj-sWM" firstAttribute="leading" secondItem="dSs-2H-7Gd" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="TZD-EE-Xcm"/>
-                                    <constraint firstItem="lpt-78-Iai" firstAttribute="top" secondItem="gPM-xL-tzc" secondAttribute="top" type="default" id="Tgz-Et-f2T"/>
+                                    <constraint firstAttribute="trailing" secondItem="8z0-Y9-IOs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ti2-1A-foi"/>
                                     <constraint firstItem="3Z2-hK-oKh" firstAttribute="top" secondItem="zFw-Op-0uW" secondAttribute="top" constant="223" id="TrA-hU-ayH"/>
                                     <constraint firstItem="T1r-hj-sWM" firstAttribute="trailing" secondItem="CKS-CA-7CO" secondAttribute="trailing" type="default" id="UOC-zB-CD9"/>
                                     <constraint firstAttribute="trailing" secondItem="K81-9a-5Oa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VNn-QC-anr"/>
                                     <constraint firstItem="y9Y-dV-0p9" firstAttribute="trailing" secondItem="lpt-78-Iai" secondAttribute="trailing" type="default" id="YfQ-bE-1bz"/>
                                     <constraint firstItem="lpt-78-Iai" firstAttribute="trailing" secondItem="CKS-CA-7CO" secondAttribute="trailing" type="default" id="Zbq-jK-cyb"/>
+                                    <constraint firstItem="i4f-Bs-xKk" firstAttribute="leading" secondItem="zFw-Op-0uW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="a3h-Hm-WUe"/>
                                     <constraint firstItem="lpt-78-Iai" firstAttribute="trailing" secondItem="3Z2-hK-oKh" secondAttribute="trailing" type="default" id="bIe-7d-ToY"/>
                                     <constraint firstItem="T1r-hj-sWM" firstAttribute="centerY" secondItem="dSs-2H-7Gd" secondAttribute="centerY" type="default" id="cwf-HI-d7B"/>
                                     <constraint firstItem="F9y-MC-NFT" firstAttribute="leading" secondItem="zFw-Op-0uW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dTb-ad-Pr2"/>
                                     <constraint firstItem="c3M-7K-S8f" firstAttribute="leading" secondItem="zFw-Op-0uW" secondAttribute="leading" type="default" id="dem-2C-Vyb"/>
-                                    <constraint firstItem="CpB-iH-qXa" firstAttribute="baseline" secondItem="5mu-Dg-vpY" secondAttribute="baseline" type="default" id="g7g-G2-ACv"/>
                                     <constraint firstItem="K81-9a-5Oa" firstAttribute="top" secondItem="CpB-iH-qXa" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="gAb-iZ-MwB"/>
                                     <constraint firstItem="CpB-iH-qXa" firstAttribute="top" secondItem="zFw-Op-0uW" secondAttribute="top" constant="297" id="gZT-YX-rve"/>
                                     <constraint firstItem="jyG-C8-XXD" firstAttribute="top" secondItem="zFw-Op-0uW" secondAttribute="top" constant="261" id="hAF-kR-IuB"/>
                                     <constraint firstItem="CpB-iH-qXa" firstAttribute="leading" secondItem="zFw-Op-0uW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jG1-Pd-1h6"/>
                                     <constraint firstItem="CpB-iH-qXa" firstAttribute="baseline" secondItem="F9y-MC-NFT" secondAttribute="baseline" type="default" id="jYM-hX-USc"/>
                                     <constraint firstItem="tIe-EX-AKE" firstAttribute="top" secondItem="zFw-Op-0uW" secondAttribute="top" constant="188" id="kRN-v3-yZa"/>
-                                    <constraint firstItem="F9y-MC-NFT" firstAttribute="centerX" secondItem="5mu-Dg-vpY" secondAttribute="centerX" type="default" id="pIe-mj-uVA"/>
                                     <constraint firstItem="K81-9a-5Oa" firstAttribute="top" secondItem="CpB-iH-qXa" secondAttribute="bottom" constant="8" type="user" id="pnU-YN-VNH"/>
                                     <constraint firstItem="y9Y-dV-0p9" firstAttribute="bottom" secondItem="jyG-C8-XXD" secondAttribute="bottom" type="default" id="poX-VR-h6u"/>
-                                    <constraint firstItem="CpB-iH-qXa" firstAttribute="centerX" secondItem="zFw-Op-0uW" secondAttribute="centerX" type="default" id="rDU-eM-ney"/>
                                     <constraint firstItem="jyG-C8-XXD" firstAttribute="leading" secondItem="zFw-Op-0uW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rqx-g1-MjE"/>
+                                    <constraint firstItem="i4f-Bs-xKk" firstAttribute="top" secondItem="F9y-MC-NFT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tcA-aM-ae0"/>
+                                    <constraint firstItem="F9y-MC-NFT" firstAttribute="centerX" secondItem="zFw-Op-0uW" secondAttribute="centerX" type="default" id="uqO-40-4rZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="i4f-Bs-xKk" secondAttribute="bottom" constant="145" id="uyk-7V-ewO"/>
                                     <constraint firstItem="lpt-78-Iai" firstAttribute="leading" secondItem="y9Y-dV-0p9" secondAttribute="leading" type="default" id="yT5-TY-1k9"/>
                                     <constraint firstItem="c3M-7K-S8f" firstAttribute="top" secondItem="zFw-Op-0uW" secondAttribute="top" type="default" id="zQK-O6-Qaq"/>
                                     <constraint firstItem="c3M-7K-S8f" firstAttribute="trailing" secondItem="zFw-Op-0uW" secondAttribute="trailing" type="default" id="zyO-4y-LGI"/>
@@ -654,7 +673,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonCreateEvent" destination="5mu-Dg-vpY" id="gtV-xy-ocG"/>
+                        <outlet property="buttonCreateEvent" destination="i4f-Bs-xKk" id="Oqn-RO-xao"/>
+                        <outlet property="buttonInviteFriends" destination="8z0-Y9-IOs" id="Ed4-Bc-bqF"/>
                         <outlet property="eventDescription" destination="F9y-MC-NFT" id="834-8n-8Cr"/>
                         <outlet property="labelOpenTime" destination="CKS-CA-7CO" id="4CQ-c3-U59"/>
                         <outlet property="labelStadiumName" destination="T1r-hj-sWM" id="5KG-Qa-04n"/>
@@ -669,6 +689,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tik-5M-zTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2807" y="1108"/>
+        </scene>
+        <!--Friend List View Controller-->
+        <scene sceneID="1Qw-7Q-FuU">
+            <objects>
+                <tableViewController storyboardIdentifier="friendList" id="LX9-p9-XLo" customClass="TPSSFriendListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qoE-da-PsK">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="NaS-ZL-bYF">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="LX9-p9-XLo" id="LFm-sF-BeX"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fuN-8a-RT6">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LX9-p9-XLo" id="IB6-6w-i4u"/>
+                            <outlet property="delegate" destination="LX9-p9-XLo" id="fGo-uB-3ma"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jed-Db-Q66"/>
+                    <connections>
+                        <outlet property="searchBar" destination="NaS-ZL-bYF" id="jP2-Ge-3mk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2pS-9i-Pwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3219" y="1144"/>
         </scene>
         <!--Join Selection Map View Controller - 附近-->
         <scene sceneID="AuY-yz-au0">
@@ -903,12 +964,14 @@
     </scenes>
     <resources>
         <image name="BG.png" width="640" height="832"/>
-        <image name="Login_button.png" width="270" height="58"/>
         <image name="bus.png" width="25" height="14"/>
         <image name="clock.png" width="25" height="25"/>
         <image name="create_button.png" width="136" height="49"/>
         <image name="dot.png" width="30" height="30"/>
+        <image name="event_create_button.png" width="287" height="114"/>
+        <image name="event_invite_friends.png" width="287" height="114"/>
         <image name="join_button.png" width="135" height="49"/>
+        <image name="login_button.png" width="270" height="58"/>
         <image name="slogan2.png" width="350" height="300"/>
         <image name="sport.png" width="30" height="30"/>
         <image name="sport2.png" width="25" height="25"/>
@@ -936,9 +999,16 @@
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="TPSSFriendListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSFriendListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
         <class className="TPSSHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSHomeViewController.h"/>
             <relationships>
+                <relationship kind="action" name="profileDetailButtonClicked:"/>
                 <relationship kind="outlet" name="profileDetailButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="userLocationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
@@ -990,7 +1060,10 @@
         <class className="TPSSStadiumDetailInCreateViewController" superclassName="TPSSStadiumDetailBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailInCreateViewController.h"/>
             <relationships>
+                <relationship kind="action" name="createEvent:"/>
+                <relationship kind="action" name="inviteButtonClicked:"/>
                 <relationship kind="outlet" name="buttonCreateEvent" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonInviteFriends" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="eventDescription" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="selectedSportTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="selectedTimeTextField" candidateClass="UITextField"/>
@@ -999,9 +1072,6 @@
         <class className="TPSSStadiumDetailInJoinViewController" superclassName="TPSSStadiumDetailBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailInJoinViewController.h"/>
             <relationships>
-                <relationship kind="action" name="joinButtonClicked2:" candidateClass="UIButton"/>
-                <relationship kind="action" name="joinButtonClicked:"/>
-                <relationship kind="action" name="ownerButtonClicked:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="actionView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="stadiumImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="tableViewSportList" candidateClass="UITableView"/>

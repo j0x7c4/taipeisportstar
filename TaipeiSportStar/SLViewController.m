@@ -92,7 +92,7 @@
 
 
 - (void)sessionStateChanged:(NSNotification*)notification {
-    NSLog(@"%@",notification);
+    //NSLog(@"%@",notification);
     if (FBSession.activeSession.isOpen) {
       UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
       TPSSHomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeViewController"];

@@ -8,7 +8,7 @@
 
 #import "TPSSDataSource.h"
 #import "JSONKit.h"
-
+#import <FacebookSDK/FacebookSDK.h>
 // Cache Keys
 static NSString *TPSSDataSourceCacheKeyAllStadiums = @"TPSSDataSource.Cache.AllStadiums";
 static NSString *TPSSDataSourceCacheKeyAllSports = @"TPSSDataSource.Cache.AllSports";
@@ -38,6 +38,9 @@ NSString * const TPSSDataSourceDictKeySportID = @"id";
 NSString * const TPSSDataSourceDictKeyEventID = @"event_id";
 NSString * const TPSSDataSourceDictKeyEventSport = @"event_sport";
 NSString * const TPSSDataSourceDictKeyEventOwnerID = @"owner_id";
+NSString * const TPSSDataSourceDictKeyEventDetailText = @"detail";
+NSString * const TPSSDataSourceDictKeyFacebookName = @"name";
+NSString * const TPSSDataSourceDictKeyFacebookID = @"id";
 
 NSString * const TPSSDataSourceDictKeyWeatherCondition = @"condition";
 NSString * const TPSSDataSourceDictKeyWeatherConditionCode = @"code";
@@ -92,6 +95,25 @@ NSString * const TPSSDataSourceDictKeyWeatherImageTime = @"time";
     cache = [[NSCache alloc] init];
   }
   return self;
+}
+- (NSArray *) arrayWithMyFacebookFriends {
+  NSMutableArray* friendList = [[NSMutableArray alloc]init];
+  if ( FBSession.activeSession.isOpen ) {
+    NSString* accessToken = FBSession.activeSession.accessToken;
+    [[FBRequest requestWithGraphPath:[[NSString alloc]initWithFormat:@"me/friends?access_token=%@",accessToken ]
+                          parameters:nil
+                          HTTPMethod:@"GET"] startWithCompletionHandler:^(FBRequestConnection *connection,NSDictionary<FBGraphObject> *obj,NSError *error) {
+      if (!error) {
+        for ( NSDictionary* item in obj[@"data"] ) {
+          [friendList addObject:item];
+        }
+      }
+      else {
+        NSLog(@"%@",error);
+      }
+    }];
+  }
+  return friendList;
 }
 - (void)refresh {
   //NSString *path = [[NSBundle mainBundle] pathForResource:@"stadium_img/stadiums" ofType:@"plist"];

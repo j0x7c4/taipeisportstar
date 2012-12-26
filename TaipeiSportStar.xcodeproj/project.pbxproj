@@ -52,7 +52,7 @@
 		05F3B399168092F1000DDA18 /* icon_v7.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B398168092F1000DDA18 /* icon_v7.png */; };
 		05F3B39E1680A792000DDA18 /* Home_page_v1.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B39D1680A792000DDA18 /* Home_page_v1.png */; };
 		05F3B3A01680A856000DDA18 /* Home_page_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B39F1680A856000DDA18 /* Home_page_v2.png */; };
-		05F3B3A21680B1FB000DDA18 /* Login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B3A11680B1FB000DDA18 /* Login_button.png */; };
+		05F3B3A21680B1FB000DDA18 /* login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B3A11680B1FB000DDA18 /* login_button.png */; };
 		05F3B3A61680BE99000DDA18 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B3A51680BE99000DDA18 /* dot.png */; };
 		05F3B3AA1680C0DE000DDA18 /* sport.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B3A91680C0DE000DDA18 /* sport.png */; };
 		05F3B3AE1680C8F9000DDA18 /* stadium.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B3AD1680C8F9000DDA18 /* stadium.png */; };
@@ -85,6 +85,12 @@
 		18452CEF166F90F500ED5480 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18452CEE166F90F400ED5480 /* CoreLocation.framework */; };
 		18452CF7166F954700ED5480 /* TPSSJoinSelectionMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18452CF6166F954700ED5480 /* TPSSJoinSelectionMapViewController.m */; };
 		18452CFE166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18452CFD166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m */; };
+		1875B1EA168B323B0057C3B3 /* event_create_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1875B1E9168B323B0057C3B3 /* event_create_button.png */; };
+		1875B1ED168B32BA0057C3B3 /* event_invite_friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 1875B1EC168B32BA0057C3B3 /* event_invite_friends.png */; };
+		1875B1F1168B4FD60057C3B3 /* TPSSFriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1875B1F0168B4FD60057C3B3 /* TPSSFriendListViewController.m */; };
+		1875B1F4168B58650057C3B3 /* TPSSMultiSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1875B1F3168B58650057C3B3 /* TPSSMultiSelectTableViewCell.m */; };
+		1875B1F7168B6FF00057C3B3 /* icon_sel_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1875B1F5168B6FF00057C3B3 /* icon_sel_mark.png */; };
+		1875B1F8168B6FF00057C3B3 /* icon_unsel_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1875B1F6168B6FF00057C3B3 /* icon_unsel_mark.png */; };
 		187BD915168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BD914168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m */; };
 		187F847D16829B25001FF6DC /* icon_v7.png in Resources */ = {isa = PBXBuildFile; fileRef = 187F847C16829B25001FF6DC /* icon_v7.png */; };
 		18811C71167716BC001FCD45 /* TPSSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 18811C70167716BC001FCD45 /* TPSSDataSource.m */; };
@@ -164,7 +170,7 @@
 		05F3B398168092F1000DDA18 /* icon_v7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_v7.png; sourceTree = "<group>"; };
 		05F3B39D1680A792000DDA18 /* Home_page_v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home_page_v1.png; sourceTree = "<group>"; };
 		05F3B39F1680A856000DDA18 /* Home_page_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home_page_v2.png; sourceTree = "<group>"; };
-		05F3B3A11680B1FB000DDA18 /* Login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_button.png; sourceTree = "<group>"; };
+		05F3B3A11680B1FB000DDA18 /* login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button.png; sourceTree = "<group>"; };
 		05F3B3A51680BE99000DDA18 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		05F3B3A91680C0DE000DDA18 /* sport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport.png; sourceTree = "<group>"; };
 		05F3B3AD1680C8F9000DDA18 /* stadium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stadium.png; sourceTree = "<group>"; };
@@ -205,6 +211,14 @@
 		18452CF6166F954700ED5480 /* TPSSJoinSelectionMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSJoinSelectionMapViewController.m; sourceTree = "<group>"; };
 		18452CFC166FC76000ED5480 /* TPSSCreateSelectionMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSCreateSelectionMapViewController.h; sourceTree = "<group>"; };
 		18452CFD166FC76000ED5480 /* TPSSCreateSelectionMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSCreateSelectionMapViewController.m; sourceTree = "<group>"; };
+		1875B1E9168B323B0057C3B3 /* event_create_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event_create_button.png; sourceTree = "<group>"; };
+		1875B1EC168B32BA0057C3B3 /* event_invite_friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event_invite_friends.png; sourceTree = "<group>"; };
+		1875B1EF168B4FD60057C3B3 /* TPSSFriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSFriendListViewController.h; sourceTree = "<group>"; };
+		1875B1F0168B4FD60057C3B3 /* TPSSFriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSFriendListViewController.m; sourceTree = "<group>"; };
+		1875B1F2168B58650057C3B3 /* TPSSMultiSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSMultiSelectTableViewCell.h; sourceTree = "<group>"; };
+		1875B1F3168B58650057C3B3 /* TPSSMultiSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSMultiSelectTableViewCell.m; sourceTree = "<group>"; };
+		1875B1F5168B6FF00057C3B3 /* icon_sel_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sel_mark.png; sourceTree = "<group>"; };
+		1875B1F6168B6FF00057C3B3 /* icon_unsel_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_unsel_mark.png; sourceTree = "<group>"; };
 		187BD913168395CF00E35AA0 /* TPSSHomeSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSHomeSectionHeaderView.h; sourceTree = "<group>"; };
 		187BD914168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSHomeSectionHeaderView.m; sourceTree = "<group>"; };
 		187F847C16829B25001FF6DC /* icon_v7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_v7.png; sourceTree = "<group>"; };
@@ -339,6 +353,7 @@
 		18452CB7166F81F900ED5480 /* TaipeiSportStar */ = {
 			isa = PBXGroup;
 			children = (
+				1875B1EE168B4F520057C3B3 /* Friends list */,
 				18EED73E16862BA500605875 /* Profile Detail */,
 				187BD9111683958F00E35AA0 /* Custom UIViews */,
 				05E391E21682537100F21DCF /* images */,
@@ -364,6 +379,10 @@
 		18452CB8166F81F900ED5480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1875B1F5168B6FF00057C3B3 /* icon_sel_mark.png */,
+				1875B1F6168B6FF00057C3B3 /* icon_unsel_mark.png */,
+				1875B1EC168B32BA0057C3B3 /* event_invite_friends.png */,
+				1875B1E9168B323B0057C3B3 /* event_create_button.png */,
 				18EED7421686379400605875 /* gender_female.png */,
 				18EED7431686379400605875 /* gender_male.png */,
 				18EED73C1685C6B700605875 /* create_button.png */,
@@ -388,7 +407,7 @@
 				05F3B3B31680CBD2000DDA18 /* bus.png */,
 				05F3B3A51680BE99000DDA18 /* dot.png */,
 				05F3B3A91680C0DE000DDA18 /* sport.png */,
-				05F3B3A11680B1FB000DDA18 /* Login_button.png */,
+				05F3B3A11680B1FB000DDA18 /* login_button.png */,
 				05F3B39F1680A856000DDA18 /* Home_page_v2.png */,
 				05F3B39D1680A792000DDA18 /* Home_page_v1.png */,
 				05F3B398168092F1000DDA18 /* icon_v7.png */,
@@ -435,6 +454,17 @@
 				18CBE7AD16797F480060F206 /* TPSSMapAnnotation.m */,
 			);
 			name = MapView;
+			sourceTree = "<group>";
+		};
+		1875B1EE168B4F520057C3B3 /* Friends list */ = {
+			isa = PBXGroup;
+			children = (
+				1875B1EF168B4FD60057C3B3 /* TPSSFriendListViewController.h */,
+				1875B1F0168B4FD60057C3B3 /* TPSSFriendListViewController.m */,
+				1875B1F2168B58650057C3B3 /* TPSSMultiSelectTableViewCell.h */,
+				1875B1F3168B58650057C3B3 /* TPSSMultiSelectTableViewCell.m */,
+			);
+			name = "Friends list";
 			sourceTree = "<group>";
 		};
 		187BD9111683958F00E35AA0 /* Custom UIViews */ = {
@@ -600,7 +630,7 @@
 				05F3B399168092F1000DDA18 /* icon_v7.png in Resources */,
 				05F3B39E1680A792000DDA18 /* Home_page_v1.png in Resources */,
 				05F3B3A01680A856000DDA18 /* Home_page_v2.png in Resources */,
-				05F3B3A21680B1FB000DDA18 /* Login_button.png in Resources */,
+				05F3B3A21680B1FB000DDA18 /* login_button.png in Resources */,
 				05F3B3A61680BE99000DDA18 /* dot.png in Resources */,
 				05F3B3AA1680C0DE000DDA18 /* sport.png in Resources */,
 				05F3B3AE1680C8F9000DDA18 /* stadium.png in Resources */,
@@ -651,6 +681,10 @@
 				18EED73D1685C6B700605875 /* create_button.png in Resources */,
 				18EED7441686379400605875 /* gender_female.png in Resources */,
 				18EED7451686379400605875 /* gender_male.png in Resources */,
+				1875B1EA168B323B0057C3B3 /* event_create_button.png in Resources */,
+				1875B1ED168B32BA0057C3B3 /* event_invite_friends.png in Resources */,
+				1875B1F7168B6FF00057C3B3 /* icon_sel_mark.png in Resources */,
+				1875B1F8168B6FF00057C3B3 /* icon_unsel_mark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +740,8 @@
 				05E3922716827DD700F21DCF /* TPSSDetailInformationViewController.m in Sources */,
 				187BD915168395CF00E35AA0 /* TPSSHomeSectionHeaderView.m in Sources */,
 				18EED74116862BCC00605875 /* TPSSProfileDetailViewController.m in Sources */,
+				1875B1F1168B4FD60057C3B3 /* TPSSFriendListViewController.m in Sources */,
+				1875B1F4168B58650057C3B3 /* TPSSMultiSelectTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

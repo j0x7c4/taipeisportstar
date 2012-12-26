@@ -24,9 +24,14 @@ extern NSString * const TPSSDataSourceDictKeyStadiumImage;
 extern NSString * const TPSSDataSourceDictKeySportName;
 extern NSString * const TPSSDataSourceDictKeySportID;
 
+extern NSString * const TPSSDataSourceDictKeyFacebookName;
+extern NSString * const TPSSDataSourceDictKeyFacebookID;
+
 extern NSString * const TPSSDataSourceDictKeyEventID;
 extern NSString * const TPSSDataSourceDictKeyEventSport;
 extern NSString * const TPSSDataSourceDictKeyEventOwnerID;
+extern NSString * const TPSSDataSourceDictKeyEventDetailText;
+
 extern NSString * const TPSSDataSourceDictKeyWeatherImage;
 extern NSString * const TPSSDataSourceDictKeyWeatherImageHeight;
 extern NSString * const TPSSDataSourceDictKeyWeatherImageWidth;
@@ -60,7 +65,7 @@ extern NSString * const TPSSDataSourceDictKeyWeatherConditionText;
 - (NSArray *)arrayWithStadiumsByEvent;
 - (NSArray *)arrayWithSportsByEvent;
 - (NSDictionary*) profileWithID:(NSString *)ID;
-
+- (NSArray *) arrayWithMyFacebookFriends;
 - (NSDictionary *)fbProfileWithID:(NSString*) ID;
 - (NSDictionary *) currentWeather;
 

@@ -13,6 +13,7 @@
 static NSString *CellIdentifier = @"Cell";
 @interface TPSSStadiumListInJoinViewController () {
   NSDictionary* sport;
+  NSMutableArray* events;
 }
 @end
 
@@ -29,6 +30,38 @@ static NSString *CellIdentifier = @"Cell";
 - (id) initWithSportDict:(NSDictionary *)sportDict {
   if ( self=[super init] ) {
     sport = sportDict;
+    events = [[NSMutableArray alloc]initWithCapacity:[sport[@"event"]count]];
+    for (int i = 0 ; i<[sport[@"event"] count] ; i++ ) {
+      events[i] = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"",TPSSDataSourceDictKeyEventID,
+                   @"",TPSSDataSourceDictKeyStadiumName,
+                   @"",TPSSDataSourceDictKeyEventOwnerID,
+                   @"",TPSSDataSourceDictKeyEventDetailText , nil];
+      NSString* eventId = sport[@"event"][i][@"event_id"];
+      [[FBRequest requestWithGraphPath:eventId
+                            parameters:nil
+                            HTTPMethod:@"GET"] startWithCompletionHandler:^(FBRequestConnection *connection,NSDictionary<FBGraphObject> *obj,NSError *error) {
+        if (!error) {
+          NSLog(@"%@",obj[@"start_time"]);
+          NSDateFormatter *dateformatterSrc = [[NSDateFormatter alloc]init];
+          [dateformatterSrc setDateFormat:@"yyyy-MM-dd HH:mm:ss+0800"];
+          NSString* dateStr = [[NSString alloc]initWithFormat:@"%@",obj[@"start_time"]];
+          dateStr = [dateStr stringByReplacingOccurrencesOfString:@"T" withString:@" "];
+          NSLog(@"date string:%@",dateStr);
+          NSDate* date = [dateformatterSrc dateFromString:dateStr];
+          NSLog(@"date: %@",date);
+          NSDateFormatter *dateformatterDst = [[NSDateFormatter alloc]init];
+          [dateformatterDst setDateFormat:@"yyyy年MM月dd日 HH:mm:ss"];
+          events[i][TPSSDataSourceDictKeyEventDetailText] = [dateformatterDst stringFromDate:date];
+          [self.tableView reloadData];
+        }
+        else {
+          NSLog(@"%@",error);
+        }
+      }];
+      events[i][TPSSDataSourceDictKeyEventID] = eventId;
+      events[i][TPSSDataSourceDictKeyStadiumName] = sport[@"event"][i][@"event_stadium"][TPSSDataSourceDictKeyStadiumName];
+      events[i][TPSSDataSourceDictKeyEventOwnerID] = sport[@"event"][i][TPSSDataSourceDictKeyEventOwnerID];
+    }
   }
   return self;
 }
@@ -62,56 +95,8 @@ static NSString *CellIdentifier = @"Cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  static NSString *CellIdentifier = @"Cell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
-  NSUInteger row = indexPath.row;
-  NSDictionary *stadium = sport[@"event"][row][@"event_stadium"];
-  cell.textLabel.text = stadium[TPSSDataSourceDictKeyStadiumName];
-  cell.textLabel.adjustsFontSizeToFitWidth = YES;
-  cell.textLabel.minimumScaleFactor = .75f;
-  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-  return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
