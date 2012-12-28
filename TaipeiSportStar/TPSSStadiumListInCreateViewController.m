@@ -72,7 +72,10 @@ static NSString *CellIdentifier = @"Cell";
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                  reuseIdentifier:CellIdentifier];
+  }
   NSUInteger row = indexPath.row;
   NSDictionary *stadium = [[TPSSDataSource sharedDataSource] arrayWithStadiumsBySport:sport][row];
   cell.textLabel.text = stadium[TPSSDataSourceDictKeyStadiumName];

@@ -95,7 +95,19 @@ static NSString *CellIdentifier = @"Cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  
+  static NSString *CellIdentifier = @"Cell";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                               reuseIdentifier:CellIdentifier];
+  }
+  NSUInteger row = indexPath.row;
+  NSDictionary *stadium = sport[@"event"][row][@"event_stadium"];
+  cell.textLabel.text = stadium[TPSSDataSourceDictKeyStadiumName];
+  cell.textLabel.adjustsFontSizeToFitWidth = YES;
+  cell.textLabel.minimumScaleFactor = .75f;
+  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+  return cell;
 }
 
 #pragma mark - Table view delegate

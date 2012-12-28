@@ -1008,7 +1008,6 @@
         <class className="TPSSHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSHomeViewController.h"/>
             <relationships>
-                <relationship kind="action" name="profileDetailButtonClicked:"/>
                 <relationship kind="outlet" name="profileDetailButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="userLocationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
@@ -1060,8 +1059,6 @@
         <class className="TPSSStadiumDetailInCreateViewController" superclassName="TPSSStadiumDetailBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPSSStadiumDetailInCreateViewController.h"/>
             <relationships>
-                <relationship kind="action" name="createEvent:"/>
-                <relationship kind="action" name="inviteButtonClicked:"/>
                 <relationship kind="outlet" name="buttonCreateEvent" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonInviteFriends" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="eventDescription" candidateClass="UITextField"/>

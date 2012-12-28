@@ -52,7 +52,6 @@
 		05F3B399168092F1000DDA18 /* icon_v7.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B398168092F1000DDA18 /* icon_v7.png */; };
 		05F3B39E1680A792000DDA18 /* Home_page_v1.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B39D1680A792000DDA18 /* Home_page_v1.png */; };
 		05F3B3A01680A856000DDA18 /* Home_page_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B39F1680A856000DDA18 /* Home_page_v2.png */; };
-		05F3B3A21680B1FB000DDA18 /* login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B3A11680B1FB000DDA18 /* login_button.png */; };
 		05F3B3A61680BE99000DDA18 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B3A51680BE99000DDA18 /* dot.png */; };
 		05F3B3AA1680C0DE000DDA18 /* sport.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B3A91680C0DE000DDA18 /* sport.png */; };
 		05F3B3AE1680C8F9000DDA18 /* stadium.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F3B3AD1680C8F9000DDA18 /* stadium.png */; };
@@ -67,6 +66,7 @@
 		180C731B16705DC400C445CA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180C731A16705DC400C445CA /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		180C732616707CB000C445CA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 180C732516707CB000C445CA /* libsqlite3.dylib */; };
 		180C732D1670BE8D00C445CA /* TPSSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180C732C1670BE8C00C445CA /* TPSSHomeViewController.m */; };
+		1817C9A6168BB0F4006B55C2 /* login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1817C9A5168BB0F4006B55C2 /* login_button.png */; };
 		18452CB2166F81F900ED5480 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18452CB1166F81F900ED5480 /* UIKit.framework */; };
 		18452CB4166F81F900ED5480 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18452CB3166F81F900ED5480 /* Foundation.framework */; };
 		18452CBC166F81F900ED5480 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18452CBA166F81F900ED5480 /* InfoPlist.strings */; };
@@ -170,7 +170,6 @@
 		05F3B398168092F1000DDA18 /* icon_v7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_v7.png; sourceTree = "<group>"; };
 		05F3B39D1680A792000DDA18 /* Home_page_v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home_page_v1.png; sourceTree = "<group>"; };
 		05F3B39F1680A856000DDA18 /* Home_page_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home_page_v2.png; sourceTree = "<group>"; };
-		05F3B3A11680B1FB000DDA18 /* login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button.png; sourceTree = "<group>"; };
 		05F3B3A51680BE99000DDA18 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		05F3B3A91680C0DE000DDA18 /* sport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport.png; sourceTree = "<group>"; };
 		05F3B3AD1680C8F9000DDA18 /* stadium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stadium.png; sourceTree = "<group>"; };
@@ -185,6 +184,7 @@
 		180C732516707CB000C445CA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		180C732B1670BE8C00C445CA /* TPSSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSSHomeViewController.h; sourceTree = "<group>"; };
 		180C732C1670BE8C00C445CA /* TPSSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSSHomeViewController.m; sourceTree = "<group>"; };
+		1817C9A5168BB0F4006B55C2 /* login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button.png; sourceTree = "<group>"; };
 		18452CAD166F81F900ED5480 /* TaipeiSportStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaipeiSportStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18452CB1166F81F900ED5480 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		18452CB3166F81F900ED5480 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -379,6 +379,7 @@
 		18452CB8166F81F900ED5480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1817C9A5168BB0F4006B55C2 /* login_button.png */,
 				1875B1F5168B6FF00057C3B3 /* icon_sel_mark.png */,
 				1875B1F6168B6FF00057C3B3 /* icon_unsel_mark.png */,
 				1875B1EC168B32BA0057C3B3 /* event_invite_friends.png */,
@@ -407,7 +408,6 @@
 				05F3B3B31680CBD2000DDA18 /* bus.png */,
 				05F3B3A51680BE99000DDA18 /* dot.png */,
 				05F3B3A91680C0DE000DDA18 /* sport.png */,
-				05F3B3A11680B1FB000DDA18 /* login_button.png */,
 				05F3B39F1680A856000DDA18 /* Home_page_v2.png */,
 				05F3B39D1680A792000DDA18 /* Home_page_v1.png */,
 				05F3B398168092F1000DDA18 /* icon_v7.png */,
@@ -630,7 +630,6 @@
 				05F3B399168092F1000DDA18 /* icon_v7.png in Resources */,
 				05F3B39E1680A792000DDA18 /* Home_page_v1.png in Resources */,
 				05F3B3A01680A856000DDA18 /* Home_page_v2.png in Resources */,
-				05F3B3A21680B1FB000DDA18 /* login_button.png in Resources */,
 				05F3B3A61680BE99000DDA18 /* dot.png in Resources */,
 				05F3B3AA1680C0DE000DDA18 /* sport.png in Resources */,
 				05F3B3AE1680C8F9000DDA18 /* stadium.png in Resources */,
@@ -685,6 +684,7 @@
 				1875B1ED168B32BA0057C3B3 /* event_invite_friends.png in Resources */,
 				1875B1F7168B6FF00057C3B3 /* icon_sel_mark.png in Resources */,
 				1875B1F8168B6FF00057C3B3 /* icon_unsel_mark.png in Resources */,
+				1817C9A6168BB0F4006B55C2 /* login_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
